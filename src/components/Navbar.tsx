@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, MessageCircle } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle, Plane } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../lib/utils';
 
@@ -30,14 +30,56 @@ const Navbar = () => {
       scrolled ? "glass-nav py-3" : "bg-transparent py-5"
     )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className={cn(
-              "text-2xl font-bold font-serif tracking-tight",
-              scrolled ? "text-emerald-900" : "text-white"
+        <div className="flex justify-between items-center py-2">
+          <Link to="/" className="flex items-center space-x-3 group relative">
+            
+            {/* Custom SVG composition mimicking the requested FLY logo shape */}
+            <div className="relative flex items-end">
+              
+              {/* Airplane and Swoosh Trail */}
+              <div className="absolute -top-6 -left-2 w-32 h-16 pointer-events-none text-slate-800 dark:text-white group-hover:text-[#D4AF37] transition-colors duration-500">
+                <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                  {/* Swoosh Tail */}
+                  <path d="M5 50 Q 40 30 75 25" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="opacity-80" />
+                  {/* Airplane Body */}
+                  <g transform="translate(65, 12) rotate(15) scale(0.8)">
+                    <path d="M29.5 12L21 21H12.5L16 16.5H5L2.5 19H0L1.5 14L0 9H2.5L5 11.5H16L12.5 7H21L29.5 16C30.5 15 30.5 13 29.5 12Z" fill="currentColor"/>
+                    <path d="M12.5 14L21 9V14H12.5Z" fill="currentColor"/>
+                  </g>
+                </svg>
+              </div>
+
+              {/* Text FLY with customized Y attached wing */}
+              <div className={cn(
+                "flex items-end font-black font-sans tracking-tighter text-4xl leading-none mt-4",
+                scrolled ? "text-[#D4AF37]" : "text-slate-900 dark:text-white"
+              )}>
+                <span>FL</span>
+                <div className="relative inline-flex">
+                  <span>Y</span>
+                  {/* Wing attached to the Y */}
+                  <svg className="absolute top-0 -right-6 w-8 h-full text-[#D4AF37] opacity-90 group-hover:scale-110 transition-transform origin-bottom-left" viewBox="0 0 40 60" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 60 C 15 40 35 30 35 15 C 35 10 25 20 20 25 C 25 15 28 5 25 0 C 20 10 15 22 10 30 C 12 25 15 15 15 10 C 10 18 5 35 0 45 L 5 60 Z" />
+                  </svg>
+                </div>
+              </div>
+
+            </div>
+
+            <div className={cn(
+              "flex flex-col ml-6 border-l-2 pl-3 mt-4",
+              scrolled ? "border-[#D4AF37]/30" : "border-slate-300 dark:border-white/20"
             )}>
-              Fly <span className="text-gold-500">International</span>
-            </span>
+              <span className={cn(
+                "text-lg font-black tracking-widest leading-none mb-1",
+                scrolled ? "text-[#D4AF37]" : "text-slate-900 dark:text-white"
+              )}>
+                INTERNATIONAL
+              </span>
+              <span className="text-[0.65rem] font-bold tracking-[0.2em] text-[#D4AF37]">
+                TOURS & TRAVELS
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -47,10 +89,10 @@ const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-gold-500",
+                  "text-sm font-bold transition-colors hover:text-gold-500",
                   location.pathname === link.path 
                     ? "text-gold-500" 
-                    : scrolled ? "text-slate-700" : "text-white"
+                    : scrolled ? "text-slate-900 dark:text-white" : "text-white"
                 )}
               >
                 {link.name}
@@ -58,7 +100,7 @@ const Navbar = () => {
             ))}
             <a 
               href="https://wa.me/1234567890" 
-              className="bg-emerald-600 text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-emerald-700 transition-all shadow-lg"
+              className="bg-[#D4AF37] text-white dark:text-[#0B090A] px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-[#C5A030] dark:hover:bg-[#C5A030] transition-all shadow-xl"
             >
               <MessageCircle size={18} />
               WhatsApp
@@ -71,7 +113,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className={cn(
                 "p-2 rounded-md",
-                scrolled ? "text-slate-700" : "text-white"
+                scrolled ? "text-slate-900 dark:text-white" : "text-slate-900 dark:text-slate-900 dark:text-white"
               )}
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -87,7 +129,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-slate-100 overflow-hidden"
+            className="md:hidden bg-white dark:bg-[#1F2937] border-b border-slate-200 dark:border-[#1F2937] overflow-hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
@@ -95,7 +137,7 @@ const Navbar = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-4 text-base font-medium text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-lg transition-colors"
+                  className="block px-3 py-4 text-base font-medium text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white/80 hover:bg-white dark:bg-[#1F2937]/50 hover:text-[#D4AF37] rounded-lg transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -103,14 +145,14 @@ const Navbar = () => {
               <div className="pt-4 flex flex-col gap-3">
                 <a 
                   href="tel:+1234567890"
-                  className="flex items-center justify-center gap-2 w-full py-3 bg-slate-100 text-slate-700 rounded-lg font-semibold"
+                  className="flex items-center justify-center gap-2 w-full py-3 bg-slate-50 dark:bg-[#0B090A] text-slate-900 dark:text-slate-900 dark:text-white/80 rounded-lg font-semibold"
                 >
                   <Phone size={18} />
                   Call Us
                 </a>
                 <a 
                   href="https://wa.me/1234567890"
-                  className="flex items-center justify-center gap-2 w-full py-3 bg-emerald-600 text-white rounded-lg font-semibold"
+                  className="flex items-center justify-center gap-2 w-full py-3 bg-slate-50 dark:bg-[#0B090A] text-slate-900 dark:text-slate-900 dark:text-white rounded-lg font-semibold"
                 >
                   <MessageCircle size={18} />
                   WhatsApp

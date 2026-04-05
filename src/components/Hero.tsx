@@ -14,26 +14,26 @@ const Hero = () => {
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/90 via-emerald-900/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white dark:from-[#0B090A]/90 via-slate-50 dark:via-[#1F2937]/70 to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="max-w-2xl space-y-8">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto text-center space-y-8 flex flex-col items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-4"
+            className="space-y-6 flex flex-col items-center"
           >
-            <span className="inline-block px-4 py-1.5 bg-gold-500/20 border border-gold-500/30 text-gold-500 rounded-full text-sm font-bold tracking-wider uppercase">
+            <span className="inline-block px-5 py-2 bg-[#D4AF37]/20 border border-sky-400/30 text-[#D4AF37] rounded-full text-sm font-bold tracking-widest uppercase">
               Trusted by 50,000+ Pilgrims
             </span>
-            <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1]">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white leading-[1.1]">
               Embark on Your <br />
-              <span className="text-gold-500">Sacred Journey</span> <br />
+              <span className="text-[#D4AF37]">Sacred Journey</span> <br />
               With Excellence
             </h1>
-            <p className="text-lg md:text-xl text-emerald-50/80 leading-relaxed max-w-xl">
+            <p className="text-lg md:text-2xl text-blue-50/80 leading-relaxed max-w-3xl text-center">
               Fly International provides premium, all-inclusive Haj and Umrah packages tailored to your spiritual needs. Experience comfort, proximity, and expert guidance.
             </p>
           </motion.div>
@@ -42,18 +42,18 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap justify-center gap-6 pt-4"
           >
             <Link
               to="/packages"
-              className="px-8 py-4 bg-gold-500 text-emerald-950 rounded-full font-bold text-lg hover:bg-gold-600 transition-all shadow-xl shadow-gold-500/20 flex items-center gap-2 group"
+              className="px-8 py-4 bg-[#D4AF37] text-white dark:text-[#0B090A] rounded-full font-bold text-xl hover:bg-[#D4AF37] transition-all shadow-[0_0_40px_rgba(212,175,55,0.4)] flex items-center gap-2 group hover:scale-105"
             >
               Explore Packages
               <ArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               to="/visa"
-              className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-bold text-lg hover:bg-white/20 transition-all"
+              className="px-8 py-4 bg-white dark:bg-[#1F2937]/10 backdrop-blur-md border border-slate-800 dark:border-white/10 text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white rounded-full font-bold text-xl hover:bg-white dark:bg-[#1F2937]/20 transition-all hover:scale-105"
             >
               Visa Services
             </Link>
@@ -63,7 +63,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 1 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8"
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 w-full max-w-4xl"
           >
             {[
               { icon: ShieldCheck, label: 'Govt. Approved' },
@@ -71,42 +71,17 @@ const Hero = () => {
               { icon: Users, label: 'Expert Guides' },
               { icon: HeartHandshake, label: '24/7 Support' },
             ].map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center md:items-start gap-2">
-                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-gold-500">
-                  <item.icon size={24} />
+              <div key={idx} className="flex flex-col items-center gap-3">
+                <div className="w-14 h-14 rounded-2xl bg-white dark:bg-[#1F2937]/10 backdrop-blur-sm border border-slate-800 dark:border-white/10 flex items-center justify-center text-[#D4AF37] shadow-2xl shadow-black/50">
+                  <item.icon size={30} />
                 </div>
-                <span className="text-xs font-semibold text-white/70 uppercase tracking-wider">{item.label}</span>
+                <span className="text-sm font-bold text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white/80 uppercase tracking-widest">{item.label}</span>
               </div>
             ))}
           </motion.div>
         </div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute bottom-10 right-10 hidden lg:block">
-        <motion.div
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="bg-white/10 backdrop-blur-xl p-6 rounded-3xl border border-white/20 shadow-2xl"
-        >
-          <div className="flex items-center gap-4">
-            <div className="flex -space-x-3">
-              {[1, 2, 3, 4].map((i) => (
-                <img
-                  key={i}
-                  src={`https://i.pravatar.cc/100?u=${i}`}
-                  className="w-10 h-10 rounded-full border-2 border-emerald-900"
-                  alt="User"
-                />
-              ))}
-            </div>
-            <div>
-              <div className="text-gold-500 font-bold">4.9/5 Rating</div>
-              <div className="text-white/60 text-xs">From 2,500+ Reviews</div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
     </section>
   );
 };

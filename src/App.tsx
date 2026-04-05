@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ThemeToggle from './components/ThemeToggle';
 import Home from './pages/Home';
 import Packages from './pages/Packages';
 import VisaServices from './pages/VisaServices';
@@ -19,10 +20,35 @@ const ScrollToTop = () => {
 };
 
 export default function App() {
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    return (localStorage.getItem('theme') as 'light' | 'dark') || 'light';
+  });
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  // Handle system theme changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e: MediaQueryListEvent) => {
+      setTheme(e.matches ? 'dark' : 'light');
+    };
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col islamic-pattern bg-fixed">
+      <ThemeToggle theme={theme} setTheme={setTheme} />
+      <div className="min-h-screen flex flex-col islamic-pattern bg-fixed transition-colors duration-500">
         <Navbar />
         <main className="flex-grow">
           <Routes>
@@ -41,9 +67,9 @@ export default function App() {
           href="https://wa.me/1234567890"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-8 right-8 w-16 h-16 bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-emerald-700 hover:scale-110 transition-all z-40 group"
+          className="fixed bottom-8 right-8 w-16 h-16 bg-slate-50 dark:bg-[#0B090A] text-slate-900 dark:text-slate-900 dark:text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-slate-50 dark:bg-[#0B090A] hover:scale-110 transition-all z-40 group"
         >
-          <div className="absolute -top-12 right-0 bg-white text-slate-800 px-4 py-2 rounded-xl text-xs font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-slate-100">
+          <div className="absolute -top-12 right-0 bg-white dark:bg-[#1F2937] text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white/90 px-4 py-2 rounded-xl text-xs font-bold shadow-2xl shadow-black/50 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-slate-200 dark:border-[#1F2937]">
             Chat with us!
           </div>
           <svg 
