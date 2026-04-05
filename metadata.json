@@ -1,0 +1,7 @@
+{
+  "name": "Fly International - Haj & Umrah Travel Services",
+  "description": "Premium and trustworthy Haj and Umrah pilgrimage services, visa assistance, and travel packages.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
