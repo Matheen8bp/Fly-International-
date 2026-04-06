@@ -152,19 +152,22 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {[
-              { title: 'Air Ticketing', path: '/services/air-ticketing', icon: <Plane size={24} className="mb-2" /> },
-              { title: 'Visa Stamping', path: '/services/visa-stamping', icon: <FileText size={24} className="mb-2" /> },
-              { title: 'Visit Visas', path: '/services/visit-visa', icon: <CheckCircle2 size={24} className="mb-2" /> },
-              { title: 'Train Tickets', path: '/services/train-ticketing', icon: <Train size={24} className="mb-2" /> },
-              { title: 'Attestations', path: '/services/certificate-attestation', icon: <FileText size={24} className="mb-2" /> },
-              { title: 'Study Abroad', path: '/services/study-abroad', icon: <BookOpen size={24} className="mb-2" /> }
+              { title: 'Air Ticketing', desc: 'Secure the lowest fares on international and domestic flights worldwide.', path: '/services/air-ticketing', icon: <Plane size={32} className="mb-4" /> },
+              { title: 'Visa Stamping', desc: 'Expert processing and quick turnaround for commercial and family visas.', path: '/services/visa-stamping', icon: <FileText size={32} className="mb-4" /> },
+              { title: 'Visit Visas', desc: 'Hassle-free tourist and family visit visa processing for the Middle East.', path: '/services/visit-visa', icon: <CheckCircle2 size={32} className="mb-4" /> },
+              { title: 'Train Tickets', desc: 'Reliable tatkal and standard train reservations across all India routes.', path: '/services/train-ticketing', icon: <Train size={32} className="mb-4" /> },
+              { title: 'Attestations', desc: 'Government verified certificate and document attestation services.', path: '/services/certificate-attestation', icon: <FileText size={32} className="mb-4" /> },
+              { title: 'Study Abroad', desc: 'Top international university admissions and complete student counseling.', path: '/services/study-abroad', icon: <BookOpen size={32} className="mb-4" /> }
             ].map((service, idx) => (
-              <a key={idx} href={service.path} className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-[#D4AF37] transition-all group shadow-sm hover:shadow-xl rounded-2xl p-6 flex flex-col items-center text-center text-slate-800 dark:text-gray-300 hover:text-[#D4AF37]">
-                <div className="text-slate-400 group-hover:text-[#D4AF37] transition-colors">{service.icon}</div>
-                <h3 className="font-bold text-sm">{service.title}</h3>
+              <a key={idx} href={service.path} className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-[#D4AF37] transition-all group shadow-sm hover:shadow-xl rounded-3xl p-8 flex flex-col items-center text-center text-slate-800 dark:text-gray-300 hover:-translate-y-1">
+                <div className="text-[#D4AF37]/70 group-hover:text-[#D4AF37] transition-colors bg-[#D4AF37]/10 p-4 rounded-full mb-4">
+                   {service.icon}
+                </div>
+                <h3 className="font-bold text-xl mb-3 text-slate-900 dark:text-white group-hover:text-[#D4AF37]">{service.title}</h3>
+                <p className="text-sm text-slate-500 dark:text-gray-400 leading-relaxed">{service.desc}</p>
               </a>
             ))}
 
