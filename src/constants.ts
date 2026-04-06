@@ -24,7 +24,7 @@ export const PACKAGES: Package[] = [
     hotelMadinah: '5 Star Hotel (Front of Masjid Nabawi)',
     rating: 5,
     features: ['VIP Visa Processing', 'Business Class Flights', 'Private Ziyarat', 'Luxury Transport'],
-    image: 'https://images.unsplash.com/photo-1565552130158-2752b644c65f?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&q=80&w=800',
     description: 'Experience the ultimate comfort and proximity to the holy sites with our premium luxury package.'
   },
   {
