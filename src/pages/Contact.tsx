@@ -47,7 +47,7 @@ const Contact = () => {
                 Need an immediate answer? Chat with our pilgrimage experts directly on WhatsApp.
               </p>
               <a 
-                href="https://wa.me/919951335542"
+                href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum Fly International! I have some questions regarding your travel services. Can you help?')}`}
                 className="flex items-center justify-center gap-2 w-full py-4 bg-white dark:bg-[#1F2937] text-[#D4AF37] rounded-xl font-bold hover:bg-white dark:bg-[#1F2937]/50 transition-all"
               >
                 <MessageCircle size={20} />

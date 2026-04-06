@@ -135,7 +135,7 @@ const Navbar = () => {
               )
             ))}
             <a
-              href="https://wa.me/919951335542"
+              href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum Fly International! I have some questions regarding your travel services. Can you help?')}`}
               className="bg-[#D4AF37] text-white dark:text-[#0B090A] px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-[#C5A030] dark:hover:bg-[#C5A030] transition-all shadow-xl"
             >
               <MessageCircle size={18} />
@@ -207,7 +207,7 @@ const Navbar = () => {
                   Call Us
                 </a>
                 <a
-                  href="https://wa.me/919951335542"
+                  href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum Fly International! I have some questions regarding your travel services. Can you help?')}`}
                   className="flex items-center justify-center gap-2 w-full py-3 bg-slate-50 dark:bg-[#0B090A] text-slate-900 dark:text-slate-900 dark:text-white rounded-lg font-semibold"
                 >
                   <MessageCircle size={18} />
