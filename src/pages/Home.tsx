@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import PackageCard from '../components/PackageCard';
 import { PACKAGES, TESTIMONIALS, RESOURCES } from '../constants';
-import { Star, Quote, CheckCircle2, ArrowRight, BookOpen, Info, CheckSquare, Plane, FileText, RotateCcw, Phone, MessageCircle } from 'lucide-react';
+import { Star, Quote, CheckCircle2, ArrowRight, BookOpen, Info, CheckSquare, Plane, FileText, RotateCcw, Phone, MessageCircle, Train } from 'lucide-react';
 
 const Home = () => {
   const featuredPackages = PACKAGES.slice(0, 3);
@@ -152,243 +152,21 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             
-            {/* Kuwait Visa Stamping */}
-            <div className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-[#D4AF37] transition-all group shadow-xl rounded-3xl overflow-hidden flex flex-col">
-              <div className="h-48 w-full relative overflow-hidden bg-slate-900">
-                <img src="https://images.unsplash.com/photo-1539281781223-9333a3cc1808?auto=format&fit=crop&q=80&w=800" alt="Kuwait City" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent" />
-                <div className="absolute bottom-4 left-4 flex gap-2 items-center">
-                   <div className="w-10 h-10 rounded-xl bg-[#D4AF37] text-white flex items-center justify-center">
-                     <FileText size={20} />
-                   </div>
-                </div>
-              </div>
-              <div className="p-8 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Kuwait Visa Stamping</h3>
-                  <div className="inline-block bg-[#D4AF37]/10 text-[#D4AF37] px-3 py-1 rounded-full text-xs font-bold mb-4 border border-[#D4AF37]/20">Processing: 10 - 12 Working Days</div>
-                  <div className="space-y-3 mb-8">
-                    <p className="text-sm text-slate-900 dark:text-white/80 font-semibold mb-2">Documents Required:</p>
-                    {['Passport', 'Medical Report', 'PCC', '4 Photos'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-slate-600 dark:text-gray-400">
-                        <CheckSquare size={14} className="text-[#D4AF37] shrink-0" /> {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <a href="https://wa.me/919951335542" className="w-full py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#D4AF37] transition-all">
-                  <MessageCircle size={18} /> Apply Now
-                </a>
-              </div>
-            </div>
-
-            {/* Certificate Attestations */}
-            <div className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-green-500 transition-all group shadow-xl rounded-3xl overflow-hidden flex flex-col">
-              <div className="h-48 w-full relative overflow-hidden bg-slate-900">
-                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800" alt="Attestation" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent" />
-                <div className="absolute bottom-4 left-4 flex gap-2 items-center">
-                   <div className="w-10 h-10 rounded-xl bg-green-600 text-white flex items-center justify-center">
-                     <CheckCircle2 size={20} />
-                   </div>
-                </div>
-              </div>
-              <div className="p-8 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Certificate Attestations</h3>
-                  <p className="text-slate-500 dark:text-gray-400 text-xs mb-4">All government certificates attestation.</p>
-                  <div className="grid grid-cols-2 gap-3 mb-6">
-                    {['Marriage', 'Degree', 'Birth', 'Death', 'Medical', 'Incorporation'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-slate-600 dark:text-gray-400">
-                        <CheckCircle2 size={12} className="text-green-600 shrink-0" /> {item}
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-xs text-center text-green-600 font-semibold mb-2">Reliable • Affordable • Comfortable</p>
-                </div>
-                <a href="https://wa.me/919951335542" className="w-full py-3 bg-green-600 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-green-700 transition-all mt-auto">
-                  <MessageCircle size={18} /> Attest Now
-                </a>
-              </div>
-            </div>
-
-            {/* Hajj & Umrah Groups */}
-            <div className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-[#D4AF37] transition-all group shadow-xl rounded-3xl overflow-hidden flex flex-col">
-              <div className="h-48 w-full relative overflow-hidden bg-slate-900">
-                <img src="https://images.unsplash.com/photo-1565552643983-c64ef5a2e633?auto=format&fit=crop&q=80&w=800" alt="Kaaba" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent" />
-                <div className="absolute bottom-4 left-4 flex gap-2 items-center">
-                   <div className="w-10 h-10 rounded-xl bg-[#D4AF37] text-white flex items-center justify-center">
-                     <Star size={20} />
-                   </div>
-                </div>
-              </div>
-              <div className="p-8 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Hajj & Umrah Groups</h3>
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37]">
-                        <Star size={14} />
-                      </div>
-                      <span className="text-sm font-semibold text-slate-700 dark:text-gray-300">5 Star Hotels Near Haram</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37]">
-                        <Plane size={14} className="transform -rotate-45" />
-                      </div>
-                      <span className="text-sm font-semibold text-slate-700 dark:text-gray-300">Direct Flights With Best Prices</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="pt-4 border-t border-slate-200 dark:border-white/10">
-                  <a href="https://wa.me/919951335542" className="w-full py-3 bg-[#D4AF37] text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#C5A030] transition-all">
-                    <MessageCircle size={18} /> Book Group
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* International Flight Tickets */}
-            <div className="lg:col-span-2 bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-blue-500 transition-all group shadow-xl rounded-3xl overflow-hidden flex flex-col sm:flex-row">
-              <div className="sm:w-2/5 relative overflow-hidden bg-slate-900 h-48 sm:h-auto">
-                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=800" alt="Flight" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-slate-900 via-slate-900/40 to-transparent" />
-                <div className="absolute inset-0 flex flex-col justify-center p-8 z-10">
-                  <Plane size={32} className="text-blue-400 transform rotate-45 mb-4" />
-                  <h3 className="text-3xl font-bold text-white mb-2">International Flight Tickets</h3>
-                  <p className="text-blue-300 font-semibold text-sm">Cheapest & Lowest Fares</p>
-                </div>
-              </div>
-              <div className="p-8 sm:w-3/5 flex flex-col justify-between">
-                <div>
-                  <p className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4 border-b border-slate-200 dark:border-white/10 pb-2">From Hyderabad To:</p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-2 mb-6">
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-2"><CheckSquare size={14} className="text-green-600 shrink-0" /><span className="text-sm font-bold text-slate-700 dark:text-gray-300">Saudi Arabia</span></div>
-                      <p className="text-xs text-slate-500 dark:text-gray-400 pl-6 border-l-2 border-slate-200 dark:border-white/10 ml-2">Jeddah, Riyadh, Dammam</p>
-                    </div>
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-2"><CheckSquare size={14} className="text-green-600 shrink-0" /><span className="text-sm font-bold text-slate-700 dark:text-gray-300">UAE</span></div>
-                      <p className="text-xs text-slate-500 dark:text-gray-400 pl-6 border-l-2 border-slate-200 dark:border-white/10 ml-2">Dubai, Abu Dhabi, Sharjah, Ras Al Khaimah</p>
-                    </div>
-                    <div className="flex items-center gap-2"><CheckSquare size={14} className="text-green-600 shrink-0" /><span className="text-sm font-bold text-slate-700 dark:text-gray-300">Kuwait</span></div>
-                    <div className="flex items-center gap-2"><CheckSquare size={14} className="text-green-600 shrink-0" /><span className="text-sm font-bold text-slate-700 dark:text-gray-300">Oman</span></div>
-                    <div className="flex items-center gap-2"><CheckSquare size={14} className="text-green-600 shrink-0" /><span className="text-sm font-bold text-slate-700 dark:text-gray-300">Qatar</span></div>
-                    <div className="flex items-center gap-2"><CheckSquare size={14} className="text-green-600 shrink-0" /><span className="text-sm font-bold text-slate-700 dark:text-gray-300">Bahrain</span></div>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <a href="tel:+919951335542" className="flex-1 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-center rounded-xl font-bold hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white transition-colors"><Phone size={18} className="inline mr-2"/>Call</a>
-                  <a href="https://wa.me/919951335542" className="flex-1 py-3 bg-blue-600 text-white text-center rounded-xl font-bold hover:bg-blue-700 transition-colors"><MessageCircle size={18} className="inline mr-2"/>Chat</a>
-                </div>
-              </div>
-            </div>
-
-            {/* Fly to Australia */}
-            <div className="lg:col-span-1 bg-slate-50 dark:bg-[#0B090A] rounded-3xl overflow-hidden shadow-xl relative group min-h-[300px]">
-              <div className="absolute inset-0">
-                <img src="https://images.unsplash.com/photo-1523482580665-27663a8a91a9?auto=format&fit=crop&q=80&w=800" alt="Sydney Opera House" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
-              </div>
-              <div className="relative p-8 h-full flex flex-col justify-end z-10 w-full border border-transparent group-hover:border-red-500/50 transition-all rounded-[23px]">
-                <div className="mb-6">
-                  <div className="flex items-start mb-2 gap-3">
-                     <h3 className="text-3xl font-bold text-white leading-tight">Fly to<br/><span className="text-yellow-400">Australia</span></h3>
-                  </div>
-                  <p className="text-white/80 text-sm">Experience the best of Australia with smooth flight bookings.</p>
-                </div>
-                <div className="flex gap-3">
-                  <a href="https://wa.me/919951335542" className="w-full py-3 bg-yellow-500 text-slate-900 text-center rounded-xl font-bold hover:bg-yellow-400 transition-colors">Book Now</a>
-                </div>
-              </div>
-            </div>
-
-            {/* Visit Visa */}
-            <div className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-purple-500 transition-all group shadow-xl rounded-3xl overflow-hidden flex flex-col">
-              <div className="h-48 w-full relative overflow-hidden bg-slate-900">
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800" alt="Tourist" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent" />
-                <div className="absolute bottom-4 left-4 flex gap-2 items-center">
-                   <div className="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center">
-                     <CheckCircle2 size={20} />
-                   </div>
-                </div>
-              </div>
-              <div className="p-8 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Visit Visas</h3>
-                  <div className="space-y-3 mb-8">
-                    {['Tourist & Family Visas', 'Dubai, Qatar, Oman & More', 'Quick Processing'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-slate-600 dark:text-gray-400">
-                        <CheckSquare size={14} className="text-purple-600 shrink-0" /> {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <a href="https://wa.me/919951335542" className="w-full py-3 bg-purple-600 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-purple-700 transition-all mt-auto">
-                  <MessageCircle size={18} /> Apply Now
-                </a>
-              </div>
-            </div>
-
-            {/* Train Ticket Booking */}
-            <div className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-orange-500 transition-all group shadow-xl rounded-3xl overflow-hidden flex flex-col">
-              <div className="h-48 w-full relative overflow-hidden bg-slate-900">
-                <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80&w=800" alt="Train" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent" />
-                <div className="absolute bottom-4 left-4 flex gap-2 items-center">
-                   <div className="w-10 h-10 rounded-xl bg-orange-500 text-white flex items-center justify-center">
-                     <CheckSquare size={20} />
-                   </div>
-                </div>
-              </div>
-              <div className="p-8 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Train Ticket Booking</h3>
-                  <div className="space-y-3 mb-8">
-                    {['Fast Tatkal Booking', 'Standard & AC Class', 'All India Routes'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-slate-600 dark:text-gray-400">
-                        <CheckSquare size={14} className="text-orange-500 shrink-0" /> {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <a href="https://wa.me/919951335542" className="w-full py-3 bg-orange-500 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-orange-600 transition-all mt-auto">
-                  <MessageCircle size={18} /> Book Ticket
-                </a>
-              </div>
-            </div>
-
-            {/* Study Abroad */}
-            <div className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-teal-500 transition-all group shadow-xl rounded-3xl overflow-hidden flex flex-col">
-              <div className="h-48 w-full relative overflow-hidden bg-slate-900">
-                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800" alt="University" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent" />
-                <div className="absolute bottom-4 left-4 flex gap-2 items-center">
-                   <div className="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center">
-                     <BookOpen size={20} />
-                   </div>
-                </div>
-              </div>
-              <div className="p-8 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Study Abroad</h3>
-                  <div className="space-y-3 mb-8">
-                    {['Top Universities Admission', 'Student Visa Processing', 'Career Counseling'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-slate-600 dark:text-gray-400">
-                        <CheckCircle2 size={14} className="text-teal-600 shrink-0" /> {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <a href="https://wa.me/919951335542" className="w-full py-3 bg-teal-600 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-teal-700 transition-all mt-auto">
-                  <MessageCircle size={18} /> Get Consultation
-                </a>
-              </div>
-            </div>
+            {[
+              { title: 'Air Ticketing', path: '/services/air-ticketing', icon: <Plane size={24} className="mb-2" /> },
+              { title: 'Visa Stamping', path: '/services/visa-stamping', icon: <FileText size={24} className="mb-2" /> },
+              { title: 'Visit Visas', path: '/services/visit-visa', icon: <CheckCircle2 size={24} className="mb-2" /> },
+              { title: 'Train Tickets', path: '/services/train-ticketing', icon: <Train size={24} className="mb-2" /> },
+              { title: 'Attestations', path: '/services/certificate-attestation', icon: <FileText size={24} className="mb-2" /> },
+              { title: 'Study Abroad', path: '/services/study-abroad', icon: <BookOpen size={24} className="mb-2" /> }
+            ].map((service, idx) => (
+              <a key={idx} href={service.path} className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-[#D4AF37] transition-all group shadow-sm hover:shadow-xl rounded-2xl p-6 flex flex-col items-center text-center text-slate-800 dark:text-gray-300 hover:text-[#D4AF37]">
+                <div className="text-slate-400 group-hover:text-[#D4AF37] transition-colors">{service.icon}</div>
+                <h3 className="font-bold text-sm">{service.title}</h3>
+              </a>
+            ))}
 
           </div>
         </div>

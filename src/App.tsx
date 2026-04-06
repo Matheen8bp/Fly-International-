@@ -11,6 +11,13 @@ import Resources from './pages/Resources';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
 
+import AirTicketing from './pages/services/AirTicketing';
+import VisaStamping from './pages/services/VisaStamping';
+import VisitVisa from './pages/services/VisitVisa';
+import TrainTicketing from './pages/services/TrainTicketing';
+import CertificateAttestation from './pages/services/CertificateAttestation';
+import StudyAbroad from './pages/services/StudyAbroad';
+
 // Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -58,6 +65,12 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/packages" element={<Packages />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/services/air-ticketing" element={<AirTicketing />} />
+              <Route path="/services/visa-stamping" element={<VisaStamping />} />
+              <Route path="/services/visit-visa" element={<VisitVisa />} />
+              <Route path="/services/train-ticketing" element={<TrainTicketing />} />
+              <Route path="/services/certificate-attestation" element={<CertificateAttestation />} />
+              <Route path="/services/study-abroad" element={<StudyAbroad />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/contact" element={<Contact />} />

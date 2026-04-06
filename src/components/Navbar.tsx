@@ -22,12 +22,12 @@ const Navbar = () => {
       name: 'Services', 
       isDropdown: true,
       items: [
-        { name: 'Air Ticketing', path: '/services#air-ticketing' },
-        { name: 'Visa Stamping', path: '/services#visa-stamping' },
-        { name: 'Visit Visa', path: '/services#visit-visa' },
-        { name: 'Train Ticket Booking', path: '/services#train-ticket-booking' },
-        { name: 'Certificate Attestation', path: '/services#certificate-attestation' },
-        { name: 'Study Abroad', path: '/services#study-abroad' },
+        { name: 'Air Ticketing', path: '/services/air-ticketing' },
+        { name: 'Visa Stamping', path: '/services/visa-stamping' },
+        { name: 'Visit Visa', path: '/services/visit-visa' },
+        { name: 'Train Ticket Booking', path: '/services/train-ticketing' },
+        { name: 'Certificate Attestation', path: '/services/certificate-attestation' },
+        { name: 'Study Abroad', path: '/services/study-abroad' },
       ]
     },
     { name: 'Resources', path: '/resources' },
