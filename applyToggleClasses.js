@@ -63,7 +63,7 @@ for (const file of files) {
   content = content.replace(/bg-luxury-gray(\/\d+)?/g, 'bg-white dark:bg-[#1F2937]$1');
   content = content.replace(/bg-luxury-black(\/\d+)?/g, 'bg-slate-900 dark:bg-[#0B090A]$1');
   content = content.replace(/bg-luxury-gold(\/\d+)?/g, 'bg-sky-500 dark:bg-[#D4AF37]$1');
-  
+
   // Muted backgrounds
   content = content.replace(/bg-white\s+dark:bg-\[#1F2937\]\/50/g, 'bg-slate-50 dark:bg-[#1F2937]/50'); // Fix for the division
 
@@ -77,10 +77,10 @@ for (const file of files) {
   content = content.replace(/text-white/g, 'text-slate-900 dark:text-white');
   content = content.replace(/text-gray-400/g, 'text-slate-600 dark:text-gray-400');
   content = content.replace(/text-gray-500/g, 'text-slate-500 dark:text-gray-500');
-  
+
   // Brands
   content = content.replace(/text-luxury-gold/g, 'text-sky-600 dark:text-[#D4AF37]');
-  
+
   // Gradients
   content = content.replace(/from-luxury-black(\/\d+)?/g, 'from-slate-900 dark:from-[#0B090A]$1');
   content = content.replace(/via-luxury-gray(\/\d+)?/g, 'via-slate-800 dark:via-[#1F2937]$1');

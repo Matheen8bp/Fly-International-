@@ -57,16 +57,24 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-6 text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="text-[#D4AF37] shrink-0" size={20} />
-                <span className="text-blue-200/80">123 Spiritual Way, Mecca Plaza, Suite 400, London, UK</span>
+                <MapPin className="text-[#D4AF37] shrink-0 mt-1" size={20} />
+                <div className="flex flex-col gap-1">
+                  <span className="text-white font-bold text-sm uppercase tracking-wider">Head Office:</span>
+                  <span className="text-blue-200/80">Beside Mandal Office, Pitlam.</span>
+                  
+                  <span className="text-white font-bold text-sm uppercase tracking-wider mt-2">Branches:</span>
+                  <span className="text-blue-200/80 text-sm leading-relaxed">
+                    Armoor, Bidar, Bodhan, Hyderabad, Yellareddy, Zaheerabad
+                  </span>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="text-[#D4AF37] shrink-0" size={20} />
-                <span className="text-blue-200/80">+1 (234) 567-890</span>
+                <span className="text-blue-200/80">+91 99513 35542</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-[#D4AF37] shrink-0" size={20} />
-                <span className="text-blue-200/80">info@flyinternational.com</span>
+                <span className="text-blue-200/80">hrflyinternationalhyd@gmail.com</span>
               </li>
             </ul>
           </div>

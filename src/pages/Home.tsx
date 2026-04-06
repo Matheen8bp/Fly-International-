@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import PackageCard from '../components/PackageCard';
 import { PACKAGES, TESTIMONIALS, RESOURCES } from '../constants';
-import { Star, Quote, CheckCircle2, ArrowRight, BookOpen, Info, CheckSquare } from 'lucide-react';
+import { Star, Quote, CheckCircle2, ArrowRight, BookOpen, Info, CheckSquare, Plane, FileText, RotateCcw, Phone, MessageCircle } from 'lucide-react';
 
 const Home = () => {
   const featuredPackages = PACKAGES.slice(0, 3);
@@ -114,12 +114,11 @@ const Home = () => {
                 </li>
               ))}
             </ul>
-            <Link 
-              to="/visa" 
-              className="inline-block px-8 py-4 bg-slate-50 dark:bg-[#0B090A] text-slate-900 dark:text-slate-900 dark:text-white rounded-full font-bold hover:bg-slate-50 dark:bg-[#0B090A] transition-all shadow-2xl shadow-black/50 shadow-2xl shadow-black/50-100"
-            >
-              Visit Visa Hub
-            </Link>
+              <a 
+                href="https://wa.me/919951335542" 
+                className="bg-white dark:bg-[#1F2937] text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white px-8 py-4 rounded-full font-bold hover:bg-slate-50 dark:bg-[#0B090A] hover:scale-105 transition-all shadow-2xl shadow-black/50 shadow-2xl shadow-black/50-100 flex items-center justify-center gap-3 w-full sm:w-auto"
+              >Visit Visa Hub
+            </a>
           </div>
           <div className="lg:w-1/2 grid grid-cols-2 gap-4">
             <div className="space-y-4">
@@ -138,6 +137,152 @@ const Home = () => {
                 <div className="text-[#D4AF37] text-sm font-medium">Visas Processed</div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Global & Premium Services (New Section based on User Request) */}
+      <section className="bg-white dark:bg-[#1F2937] py-24 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span className="text-[#D4AF37] font-bold uppercase tracking-widest text-sm">Beyond Pilgrimage</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">Global Travel & Documentation</h2>
+            <p className="text-slate-600 dark:text-gray-400">
+              We provide comprehensive global travel solutions, affordable ticketing, and official documentation assistance with a fast, zero-hassle process.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            {/* Indian Passport Renewal */}
+            <div className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-[#D4AF37] transition-all group shadow-xl rounded-3xl overflow-hidden flex flex-col">
+              <div className="h-48 w-full relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1544015759-247065cb595f?auto=format&fit=crop&q=80&w=800" alt="Passport" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent" />
+                <div className="absolute bottom-4 left-4 flex gap-2 items-center">
+                   <div className="w-10 h-10 rounded-xl bg-[#D4AF37] text-white flex items-center justify-center">
+                     <BookOpen size={20} />
+                   </div>
+                </div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Indian Passport Renewal</h3>
+                  <p className="text-[#D4AF37] font-bold text-sm uppercase mb-4 tracking-widest">In UAE</p>
+                  <div className="space-y-3 mb-8">
+                    <p className="text-sm text-slate-900 dark:text-white/80 font-semibold mb-2">Documents Required:</p>
+                    {['Old Passport', 'Emirates ID', 'Passport Size Photo', 'Aadharcard Copy'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-slate-600 dark:text-gray-400">
+                        <CheckSquare size={14} className="text-[#D4AF37] shrink-0" /> {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <a href="https://wa.me/919951335542" className="w-full py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#D4AF37] transition-all">
+                  <MessageCircle size={18} /> Apply Now
+                </a>
+              </div>
+            </div>
+
+            {/* Saudi Certificate Attestation */}
+            <div className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-green-500 transition-all group shadow-xl rounded-3xl overflow-hidden flex flex-col">
+              <div className="h-48 w-full relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800" alt="Attestation" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent" />
+                <div className="absolute bottom-4 left-4 flex gap-2 items-center">
+                   <div className="w-10 h-10 rounded-xl bg-green-600 text-white flex items-center justify-center">
+                     <FileText size={20} />
+                   </div>
+                </div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Saudi Certificate Attestation</h3>
+                  <div className="space-y-3 mb-8">
+                    {['Marriage & Birth Certificate', 'Polio Vaccination Certificate', 'Death Certificate'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-slate-600 dark:text-gray-400">
+                        <CheckCircle2 size={14} className="text-green-600 shrink-0" /> {item}
+                      </div>
+                    ))}
+                    <p className="text-xs text-slate-500 mt-4 italic">*Single certificate courier charges applicable.</p>
+                  </div>
+                </div>
+                <a href="https://wa.me/919951335542" className="w-full py-3 bg-green-600 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-green-700 transition-all">
+                  <MessageCircle size={18} /> Attest Now
+                </a>
+              </div>
+            </div>
+
+            {/* Return Ticket Cancellation */}
+            <div className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-blue-500 transition-all group shadow-xl rounded-3xl overflow-hidden flex flex-col">
+              <div className="h-48 w-full relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1542840410-3092f99611a3?auto=format&fit=crop&q=80&w=800" alt="Traveler" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent" />
+                <div className="absolute bottom-4 left-4 flex gap-2 items-center">
+                   <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center">
+                     <RotateCcw size={20} />
+                   </div>
+                </div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Return Ticket Cancellation</h3>
+                  <div className="space-y-3 mb-8">
+                    {['For International Travelers', 'Easy & Quick Process', 'No Office Visit Required'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-slate-600 dark:text-gray-400">
+                        <CheckCircle2 size={14} className="text-blue-500 shrink-0" /> {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <a href="tel:+919951335542" className="w-full py-3 bg-blue-600 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-blue-700 transition-all">
+                  <Phone size={18} /> Call To Cancel
+                </a>
+              </div>
+            </div>
+
+            {/* UK Flight Tickets */}
+            <div className="lg:col-span-1.5 bg-slate-50 dark:bg-[#0B090A] rounded-3xl overflow-hidden shadow-xl relative group min-h-[300px]">
+              <div className="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=1200" alt="London UK" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent"></div>
+              </div>
+              <div className="relative p-8 h-full flex flex-col justify-between z-10 w-full sm:w-2/3 border border-transparent group-hover:border-[#D4AF37]/50 transition-all rounded-[23px]">
+                <div>
+                  <div className="flex items-start mb-2 gap-3">
+                     <Plane size={32} className="text-[#D4AF37] transform rotate-45" />
+                     <h3 className="text-3xl font-bold text-white leading-tight">Fly to<br/><span className="text-[#D4AF37]">United Kingdom</span></h3>
+                  </div>
+                  <p className="text-white/80">Premium & Affordable Flight Tickets to all UK destinations.</p>
+                </div>
+                <div className="mt-8 flex gap-3">
+                  <a href="tel:+919951335542" className="flex-1 py-3 bg-white text-slate-900 text-center rounded-xl font-bold hover:bg-[#D4AF37] hover:text-white transition-colors"><Phone size={18} className="inline mr-2"/>Call</a>
+                  <a href="https://wa.me/919951335542" className="flex-1 py-3 bg-[#D4AF37] text-white text-center rounded-xl font-bold hover:bg-[#C5A030] transition-colors"><MessageCircle size={18} className="inline mr-2"/>Chat</a>
+                </div>
+              </div>
+            </div>
+
+            {/* Canada Flight Tickets */}
+            <div className="lg:col-span-1.5 bg-slate-50 dark:bg-[#0B090A] rounded-3xl overflow-hidden shadow-xl relative group min-h-[300px]">
+              <div className="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&q=80&w=1200" alt="Canada Template" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent"></div>
+              </div>
+              <div className="relative p-8 h-full flex flex-col justify-between z-10 w-full sm:w-2/3 border border-transparent group-hover:border-[#red-500]/50 transition-all rounded-[23px]">
+                <div>
+                  <div className="flex items-start mb-2 gap-3">
+                     <Plane size={32} className="text-red-500 transform rotate-45" />
+                     <h3 className="text-3xl font-bold text-white leading-tight">Fly to<br/><span className="text-red-500">Canada</span></h3>
+                  </div>
+                  <p className="text-white/80">Fast, affordable, and easy booking for flights to Canada.</p>
+                </div>
+                <div className="mt-8 flex gap-3">
+                  <a href="tel:+919951335542" className="flex-1 py-3 bg-white text-slate-900 text-center rounded-xl font-bold hover:bg-red-600 hover:text-white transition-colors"><Phone size={18} className="inline mr-2"/>Call</a>
+                  <a href="https://wa.me/919951335542" className="flex-1 py-3 bg-[#D4AF37] text-white text-center rounded-xl font-bold hover:bg-[#C5A030] transition-colors"><MessageCircle size={18} className="inline mr-2"/>Chat</a>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -229,7 +374,7 @@ const Home = () => {
                 Get a Free Quote
               </Link>
               <a 
-                href="https://wa.me/1234567890" 
+                href="https://wa.me/919951335542" 
                 className="px-10 py-4 bg-white dark:bg-[#1F2937]/10 backdrop-blur-md border border-slate-800 dark:border-white/10 text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white rounded-full font-bold text-lg hover:bg-white dark:bg-[#1F2937]/20 transition-all flex items-center gap-2"
               >
                 Chat on WhatsApp

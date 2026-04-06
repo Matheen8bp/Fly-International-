@@ -32,10 +32,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-2">
           <Link to="/" className="flex items-center space-x-3 group relative">
-            
+
             {/* Custom SVG composition mimicking the requested FLY logo shape */}
             <div className="relative flex items-end">
-              
+
               {/* Airplane and Swoosh Trail */}
               <div className="absolute -top-6 -left-2 w-32 h-16 pointer-events-none text-slate-800 dark:text-white group-hover:text-[#D4AF37] transition-colors duration-500">
                 <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
@@ -43,8 +43,8 @@ const Navbar = () => {
                   <path d="M5 50 Q 40 30 75 25" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="opacity-80" />
                   {/* Airplane Body */}
                   <g transform="translate(65, 12) rotate(15) scale(0.8)">
-                    <path d="M29.5 12L21 21H12.5L16 16.5H5L2.5 19H0L1.5 14L0 9H2.5L5 11.5H16L12.5 7H21L29.5 16C30.5 15 30.5 13 29.5 12Z" fill="currentColor"/>
-                    <path d="M12.5 14L21 9V14H12.5Z" fill="currentColor"/>
+                    <path d="M29.5 12L21 21H12.5L16 16.5H5L2.5 19H0L1.5 14L0 9H2.5L5 11.5H16L12.5 7H21L29.5 16C30.5 15 30.5 13 29.5 12Z" fill="currentColor" />
+                    <path d="M12.5 14L21 9V14H12.5Z" fill="currentColor" />
                   </g>
                 </svg>
               </div>
@@ -90,16 +90,16 @@ const Navbar = () => {
                 to={link.path}
                 className={cn(
                   "text-sm font-bold transition-colors hover:text-gold-500",
-                  location.pathname === link.path 
-                    ? "text-gold-500" 
+                  location.pathname === link.path
+                    ? "text-gold-500"
                     : scrolled ? "text-slate-900 dark:text-white" : "text-white"
                 )}
               >
                 {link.name}
               </Link>
             ))}
-            <a 
-              href="https://wa.me/1234567890" 
+            <a
+              href="https://wa.me/919951335542"
               className="bg-[#D4AF37] text-white dark:text-[#0B090A] px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-[#C5A030] dark:hover:bg-[#C5A030] transition-all shadow-xl"
             >
               <MessageCircle size={18} />
@@ -143,15 +143,15 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="pt-4 flex flex-col gap-3">
-                <a 
-                  href="tel:+1234567890"
+                <a
+                  href="tel:+919951335542"
                   className="flex items-center justify-center gap-2 w-full py-3 bg-slate-50 dark:bg-[#0B090A] text-slate-900 dark:text-slate-900 dark:text-white/80 rounded-lg font-semibold"
                 >
                   <Phone size={18} />
                   Call Us
                 </a>
-                <a 
-                  href="https://wa.me/1234567890"
+                <a
+                  href="https://wa.me/919951335542"
                   className="flex items-center justify-center gap-2 w-full py-3 bg-slate-50 dark:bg-[#0B090A] text-slate-900 dark:text-slate-900 dark:text-white rounded-lg font-semibold"
                 >
                   <MessageCircle size={18} />
