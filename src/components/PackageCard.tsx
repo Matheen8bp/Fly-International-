@@ -11,7 +11,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ pkg }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleBookNow = () => {
-    const message = `Assalamu Alaikum! I would like to book the *${pkg.title}* (${pkg.duration}) priced at *$${pkg.price}*. Please provide me with the next steps.`;
+    const message = `Assalamu Alaikum! I would like to book the *${pkg.title}* (${pkg.duration}) priced at *₹${pkg.price.toLocaleString('en-IN')}*. Please provide me with the next steps.`;
     window.open(`https://wa.me/919951335542?text=${encodeURIComponent(message)}`, '_blank');
   };
 
@@ -49,7 +49,8 @@ const PackageCard: React.FC<PackageCardProps> = ({ pkg }) => {
               {pkg.title}
             </h3>
             <div className="text-right shrink-0 ml-2">
-              <span className="text-2xl font-bold text-[#D4AF37] block">₹ {pkg.price}</span>
+              <span className="text-sm text-slate-600 dark:text-gray-400 line-through block">₹ {(pkg.price + 15000).toLocaleString('en-IN')}</span>
+              <span className="text-2xl font-bold text-[#D4AF37] block">₹ {pkg.price.toLocaleString('en-IN')}</span>
             </div>
           </div>
 
@@ -142,7 +143,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ pkg }) => {
                 <div className="flex justify-between items-center mb-8 pb-6 border-b border-slate-100 dark:border-white/10">
                   <div>
                     <p className="text-slate-500 dark:text-gray-400 text-sm font-semibold uppercase tracking-wider mb-1">Total Pricing</p>
-                    <p className="text-4xl font-bold text-[#D4AF37]">₹ {pkg.price}</p>
+                    <p className="text-4xl font-bold text-[#D4AF37]">₹ {pkg.price.toLocaleString('en-IN')}</p>
                   </div>
                   <button 
                     onClick={handleBookNow}
