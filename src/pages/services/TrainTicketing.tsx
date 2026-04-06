@@ -46,7 +46,7 @@ const TrainTicketing = () => {
                ))}
             </div>
             <div className="pt-8">
-              <a href="https://wa.me/919951335542" className="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 text-white rounded-xl font-bold hover:bg-orange-600 transition-colors shadow-lg">
+              <a href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum! I want to book Train Tickets through Fly International.')}`} className="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 text-white rounded-xl font-bold hover:bg-orange-600 transition-colors shadow-lg">
                 <MessageCircle size={20} /> Book Now
               </a>
             </div>

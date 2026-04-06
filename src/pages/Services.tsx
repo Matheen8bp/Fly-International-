@@ -100,6 +100,16 @@ const Services = () => {
                 <div className="flex items-center gap-2 font-bold text-slate-800 dark:text-white"><CheckSquare size={16} className="text-green-600" /> Australia & UK</div>
                 <div className="flex items-center gap-2 font-bold text-slate-800 dark:text-white"><CheckSquare size={16} className="text-green-600" /> Domestic Flights (India)</div>
               </div>
+              <div className="pt-4">
+                 <a 
+                   href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum! I would like to inquire about Air Ticketing services at Fly International.')}`}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="inline-flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg"
+                 >
+                   <MessageCircle size={18} /> Chat with Agent
+                 </a>
+              </div>
             </div>
           </div>
         </section>
@@ -128,6 +138,16 @@ const Services = () => {
                    ))}
                  </div>
               </div>
+              <div className="pt-4">
+                 <a 
+                   href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum! I need assistance with Visa Stamping services.')}`}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="inline-flex items-center gap-2 px-8 py-3 bg-[#D4AF37] text-white dark:text-[#0B090A] rounded-xl font-bold hover:bg-[#C5A030] transition-all shadow-lg"
+                 >
+                   <MessageCircle size={18} /> Submit Documents
+                 </a>
+              </div>
             </div>
           </div>
         </section>
@@ -153,6 +173,16 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
+              <div className="pt-4">
+                 <a 
+                   href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum! I am interested in Visit Visa services for my family.')}`}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="inline-flex items-center gap-2 px-8 py-3 bg-purple-600 text-white rounded-xl font-bold hover:bg-purple-700 transition-all shadow-lg"
+                 >
+                   <MessageCircle size={18} /> Apply for Visit Visa
+                 </a>
+              </div>
             </div>
           </div>
         </section>
@@ -178,6 +208,16 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
+              <div className="pt-4">
+                 <a 
+                   href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum! I want to book Train Tickets through Fly International.')}`}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="inline-flex items-center gap-2 px-8 py-3 bg-orange-500 text-white rounded-xl font-bold hover:bg-orange-600 transition-all shadow-lg"
+                 >
+                   <MessageCircle size={18} /> Book Now
+                 </a>
+              </div>
             </div>
           </div>
         </section>
@@ -202,6 +242,16 @@ const Services = () => {
                     <CheckSquare size={16} className="text-green-600" /> {item}
                   </div>
                 ))}
+              </div>
+              <div className="pt-4">
+                 <a 
+                   href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum! I need my certificates attested. Can you help?')}`}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="inline-flex items-center gap-2 px-8 py-3 bg-green-600 text-white rounded-xl font-bold hover:bg-green-700 transition-all shadow-lg"
+                 >
+                   <MessageCircle size={18} /> Request Attestation
+                 </a>
               </div>
             </div>
           </div>
@@ -229,8 +279,13 @@ const Services = () => {
                 ))}
               </ul>
               <div className="pt-4">
-                 <a href="https://wa.me/919951335542" className="inline-flex items-center gap-2 px-8 py-4 bg-teal-600 text-white rounded-xl font-bold hover:bg-teal-700 transition-colors shadow-lg">
-                   <Phone size={20} /> Get Free Consultation
+                 <a 
+                   href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum! I am looking for Study Abroad counseling and admission assistance.')}`}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="inline-flex items-center gap-2 px-8 py-4 bg-teal-600 text-white rounded-xl font-bold hover:bg-teal-700 transition-all shadow-lg"
+                 >
+                   <MessageCircle size={20} /> Get Free Consultation
                  </a>
               </div>
             </div>

@@ -53,7 +53,7 @@ const AirTicketing = () => {
               <div className="p-6 bg-white dark:bg-[#1F2937] rounded-2xl shadow-sm border border-slate-100 dark:border-white/10 font-bold text-slate-800 dark:text-white flex items-center gap-3"><CheckSquare size={20} className="text-green-600" /> Domestic Flights</div>
             </div>
             <div className="pt-8 flex gap-4">
-              <a href="https://wa.me/919951335542" className="flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg">
+              <a href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum! I would like to inquire about Air Ticketing services at Fly International.')}`} className="flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg">
                 <MessageCircle size={20} /> Chat with Agent
               </a>
               <a href="tel:+919951335542" className="flex items-center gap-2 px-8 py-4 bg-slate-900 text-white dark:bg-white dark:text-slate-900 rounded-xl font-bold transition-colors shadow-lg">

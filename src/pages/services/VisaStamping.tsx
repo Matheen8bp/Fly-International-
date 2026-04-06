@@ -48,7 +48,7 @@ const VisaStamping = () => {
                </div>
             </div>
             <div className="pt-8">
-              <a href="https://wa.me/919951335542" className="inline-flex items-center gap-2 px-8 py-4 bg-[#D4AF37] text-white dark:text-[#0B090A] rounded-xl font-bold hover:bg-[#C5A030] transition-colors shadow-lg">
+              <a href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum! I need assistance with Visa Stamping services.')}`} className="inline-flex items-center gap-2 px-8 py-4 bg-[#D4AF37] text-white dark:text-[#0B090A] rounded-xl font-bold hover:bg-[#C5A030] transition-colors shadow-lg">
                 <MessageCircle size={20} /> Submit Documents
               </a>
             </div>

@@ -49,7 +49,7 @@ const StudyAbroad = () => {
               ))}
             </ul>
             <div className="pt-8">
-              <a href="https://wa.me/919951335542" className="inline-flex items-center gap-2 px-8 py-4 bg-teal-600 text-white rounded-xl font-bold hover:bg-teal-700 transition-colors shadow-lg">
+              <a href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum! I am looking for Study Abroad counseling and admission assistance.')}`} className="inline-flex items-center gap-2 px-8 py-4 bg-teal-600 text-white rounded-xl font-bold hover:bg-teal-700 transition-colors shadow-lg">
                 <MessageCircle size={20} /> Free Consultation Call
               </a>
             </div>

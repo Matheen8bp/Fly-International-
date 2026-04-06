@@ -46,7 +46,7 @@ const VisitVisa = () => {
               ))}
             </ul>
             <div className="pt-8">
-              <a href="https://wa.me/919951335542" className="inline-flex items-center gap-2 px-8 py-4 bg-purple-600 text-white rounded-xl font-bold hover:bg-purple-700 transition-colors shadow-lg">
+              <a href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum! I am interested in Visit Visa services for my family.')}`} className="inline-flex items-center gap-2 px-8 py-4 bg-purple-600 text-white rounded-xl font-bold hover:bg-purple-700 transition-colors shadow-lg">
                 <MessageCircle size={20} /> Apply for Visit Visa
               </a>
             </div>

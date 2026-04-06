@@ -155,20 +155,34 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {[
-              { title: 'Air Ticketing', desc: 'Secure the lowest fares on international and domestic flights worldwide.', path: '/services/air-ticketing', icon: <Plane size={32} className="mb-4" /> },
-              { title: 'Visa Stamping', desc: 'Expert processing and quick turnaround for commercial and family visas.', path: '/services/visa-stamping', icon: <FileText size={32} className="mb-4" /> },
-              { title: 'Visit Visas', desc: 'Hassle-free tourist and family visit visa processing for the Middle East.', path: '/services/visit-visa', icon: <CheckCircle2 size={32} className="mb-4" /> },
-              { title: 'Train Tickets', desc: 'Reliable tatkal and standard train reservations across all India routes.', path: '/services/train-ticketing', icon: <Train size={32} className="mb-4" /> },
-              { title: 'Attestations', desc: 'Government verified certificate and document attestation services.', path: '/services/certificate-attestation', icon: <FileText size={32} className="mb-4" /> },
-              { title: 'Study Abroad', desc: 'Top international university admissions and complete student counseling.', path: '/services/study-abroad', icon: <BookOpen size={32} className="mb-4" /> }
+              { title: 'Air Ticketing', desc: 'Secure the lowest fares on international and domestic flights worldwide.', path: '/services/air-ticketing', icon: <Plane size={32} className="mb-4" />, waText: 'Assalamu Alaikum! I would like to inquire about Air Ticketing services at Fly International.' },
+              { title: 'Visa Stamping', desc: 'Expert processing and quick turnaround for commercial and family visas.', path: '/services/visa-stamping', icon: <FileText size={32} className="mb-4" />, waText: 'Assalamu Alaikum! I need assistance with Visa Stamping services.' },
+              { title: 'Visit Visas', desc: 'Hassle-free tourist and family visit visa processing for the Middle East.', path: '/services/visit-visa', icon: <CheckCircle2 size={32} className="mb-4" />, waText: 'Assalamu Alaikum! I am interested in Visit Visa services for my family.' },
+              { title: 'Train Tickets', desc: 'Reliable tatkal and standard train reservations across all India routes.', path: '/services/train-ticketing', icon: <Train size={32} className="mb-4" />, waText: 'Assalamu Alaikum! I want to book Train Tickets through Fly International.' },
+              { title: 'Attestations', desc: 'Government verified certificate and document attestation services.', path: '/services/certificate-attestation', icon: <FileText size={32} className="mb-4" />, waText: 'Assalamu Alaikum! I need my certificates attested. Can you help?' },
+              { title: 'Study Abroad', desc: 'Top international university admissions and complete student counseling.', path: '/services/study-abroad', icon: <BookOpen size={32} className="mb-4" />, waText: 'Assalamu Alaikum! I am looking for Study Abroad counseling and admission assistance.' }
             ].map((service, idx) => (
-              <a key={idx} href={service.path} className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-[#D4AF37] transition-all group shadow-sm hover:shadow-xl rounded-3xl p-8 flex flex-col items-center text-center text-slate-800 dark:text-gray-300 hover:-translate-y-1">
+              <div key={idx} className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-[#D4AF37] transition-all group shadow-sm hover:shadow-xl rounded-3xl p-8 flex flex-col items-center text-center text-slate-800 dark:text-gray-300 hover:-translate-y-1">
                 <div className="text-[#D4AF37]/70 group-hover:text-[#D4AF37] transition-colors bg-[#D4AF37]/10 p-4 rounded-full mb-4">
                    {service.icon}
                 </div>
                 <h3 className="font-bold text-xl mb-3 text-slate-900 dark:text-white group-hover:text-[#D4AF37]">{service.title}</h3>
-                <p className="text-sm text-slate-500 dark:text-gray-400 leading-relaxed">{service.desc}</p>
-              </a>
+                <p className="text-sm text-slate-500 dark:text-gray-400 leading-relaxed mb-8">{service.desc}</p>
+                
+                <div className="flex gap-4 w-full mt-auto pt-6 border-t border-slate-100 dark:border-white/5">
+                   <Link to={service.path} className="flex-1 py-3 px-4 rounded-xl border border-[#D4AF37]/20 text-[#D4AF37] text-sm font-bold hover:bg-[#D4AF37]/10 transition-all flex items-center justify-center">
+                      Details
+                   </Link>
+                   <a 
+                     href={`https://wa.me/919951335542?text=${encodeURIComponent(service.waText)}`}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="flex-1 py-3 px-4 rounded-xl bg-green-600 text-white text-sm font-bold hover:bg-green-700 transition-all flex items-center justify-center gap-2"
+                   >
+                     <MessageCircle size={16} /> Chat
+                   </a>
+                </div>
+              </div>
             ))}
 
           </div>
