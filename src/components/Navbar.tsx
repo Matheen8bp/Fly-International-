@@ -18,7 +18,16 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Packages', path: '/packages' },
-    { name: 'Visa Services', path: '/visa' },
+    { 
+      name: 'Services', 
+      isDropdown: true,
+      items: [
+        { name: 'Air Ticketing', path: '/visa#air-ticketing' },
+        { name: 'Visa Stamping', path: '/visa#visa-stamping' },
+        { name: 'Visit Visa', path: '/visa#visit-visa' },
+        { name: 'Train Ticket Booking', path: '/visa#train-ticket-booking' },
+      ]
+    },
     { name: 'Resources', path: '/resources' },
     { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' },
@@ -85,18 +94,43 @@ const Navbar = () => {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={cn(
-                  "text-sm font-bold transition-colors hover:text-gold-500",
-                  location.pathname === link.path
-                    ? "text-gold-500"
-                    : scrolled ? "text-slate-900 dark:text-white" : "text-white"
-                )}
-              >
-                {link.name}
-              </Link>
+              link.isDropdown ? (
+                <div key={link.name} className="relative group/dropdown py-2">
+                  <button className={cn(
+                    "text-sm font-bold flex items-center gap-1 transition-colors hover:text-gold-500",
+                    scrolled ? "text-slate-900 dark:text-white" : "text-white"
+                  )}>
+                    {link.name}
+                    <svg className="w-4 h-4 ml-0.5 transform group-hover/dropdown:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                  <div className="absolute left-0 mt-2 w-56 rounded-xl shadow-xl bg-white dark:bg-[#1F2937] ring-1 ring-slate-900/5 dark:ring-white/10 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-200 transform origin-top group-hover/dropdown:scale-100 scale-95 border border-slate-100 dark:border-[#1F2937]">
+                    <div className="py-2">
+                      {link.items?.map((item) => (
+                        <Link
+                          key={item.name}
+                          to={item.path}
+                          className="block px-5 py-2.5 text-sm font-semibold text-slate-700 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-[#0B090A] hover:text-[#D4AF37] dark:hover:text-[#D4AF37] transition-colors"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={cn(
+                    "text-sm font-bold transition-colors hover:text-gold-500",
+                    location.pathname === link.path
+                      ? "text-gold-500"
+                      : scrolled ? "text-slate-900 dark:text-white" : "text-white"
+                  )}
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
             <a
               href="https://wa.me/919951335542"
@@ -113,7 +147,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className={cn(
                 "p-2 rounded-md",
-                scrolled ? "text-slate-900 dark:text-white" : "text-slate-900 dark:text-slate-900 dark:text-white"
+                scrolled ? "text-slate-900 dark:text-white" : "text-white"
               )}
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -129,18 +163,38 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-[#1F2937] border-b border-slate-200 dark:border-[#1F2937] overflow-hidden"
+            className="md:hidden bg-white dark:bg-[#1F2937] border-b border-slate-200 dark:border-[#1F2937] overflow-hidden shadow-2xl"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-3 py-4 text-base font-medium text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white/80 hover:bg-white dark:bg-[#1F2937]/50 hover:text-[#D4AF37] rounded-lg transition-colors"
-                >
-                  {link.name}
-                </Link>
+                link.isDropdown ? (
+                  <div key={link.name} className="py-2 space-y-2">
+                    <div className="px-3 py-2 text-base font-bold text-slate-500 uppercase tracking-wider text-xs">
+                      {link.name}
+                    </div>
+                    <div className="space-y-1">
+                      {link.items?.map((item) => (
+                        <Link
+                          key={item.name}
+                          to={item.path}
+                          onClick={() => setIsOpen(false)}
+                          className="block px-6 py-3 text-sm font-bold text-slate-800 dark:text-white/90 hover:bg-slate-50 dark:hover:bg-[#0B090A] hover:text-[#D4AF37] rounded-lg transition-colors border-l-2 border-transparent hover:border-[#D4AF37]"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className="block px-3 py-4 text-base font-bold text-slate-900 dark:text-white/90 hover:bg-slate-50 dark:hover:bg-[#0B090A] hover:text-[#D4AF37] rounded-lg transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
               <div className="pt-4 flex flex-col gap-3">
                 <a
