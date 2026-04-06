@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import ThemeToggle from './components/ThemeToggle';
 import Home from './pages/Home';
 import Packages from './pages/Packages';
-import VisaServices from './pages/VisaServices';
+import Services from './pages/Services';
 import AboutUs from './pages/AboutUs';
 import Resources from './pages/Resources';
 import Contact from './pages/Contact';
@@ -57,7 +57,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/packages" element={<Packages />} />
-              <Route path="/visa" element={<VisaServices />} />
+              <Route path="/services" element={<Services />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/contact" element={<Contact />} />
