@@ -105,7 +105,7 @@ const Home = () => {
               Experience hassle-free travel with our comprehensive range of booking and documentation services. From the skies to the tracks, we've got you covered.
             </p>
             <ul className="space-y-3">
-              {['Air Ticketing', 'Visa Stamping', 'Visit Visa', 'Train Ticket Booking'].map((item, idx) => (
+              {['Air Ticketing', 'Visa Stamping', 'Visit Visa', 'Train Ticket Booking', 'Certificate Attestation', 'Study Abroad'].map((item, idx) => (
                 <li key={idx} className="flex items-center gap-3 text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white/80 font-medium">
                   <div className="w-6 h-6 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37]">
                     <CheckCircle2 size={16} />
@@ -303,6 +303,90 @@ const Home = () => {
                 <div className="flex gap-3">
                   <a href="https://wa.me/919951335542" className="w-full py-3 bg-yellow-500 text-slate-900 text-center rounded-xl font-bold hover:bg-yellow-400 transition-colors">Book Now</a>
                 </div>
+              </div>
+            </div>
+
+            {/* Visit Visa */}
+            <div className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-purple-500 transition-all group shadow-xl rounded-3xl overflow-hidden flex flex-col">
+              <div className="h-48 w-full relative overflow-hidden bg-slate-900">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800" alt="Tourist" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent" />
+                <div className="absolute bottom-4 left-4 flex gap-2 items-center">
+                   <div className="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center">
+                     <CheckCircle2 size={20} />
+                   </div>
+                </div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Visit Visas</h3>
+                  <div className="space-y-3 mb-8">
+                    {['Tourist & Family Visas', 'Dubai, Qatar, Oman & More', 'Quick Processing'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-slate-600 dark:text-gray-400">
+                        <CheckSquare size={14} className="text-purple-600 shrink-0" /> {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <a href="https://wa.me/919951335542" className="w-full py-3 bg-purple-600 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-purple-700 transition-all mt-auto">
+                  <MessageCircle size={18} /> Apply Now
+                </a>
+              </div>
+            </div>
+
+            {/* Train Ticket Booking */}
+            <div className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-orange-500 transition-all group shadow-xl rounded-3xl overflow-hidden flex flex-col">
+              <div className="h-48 w-full relative overflow-hidden bg-slate-900">
+                <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80&w=800" alt="Train" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent" />
+                <div className="absolute bottom-4 left-4 flex gap-2 items-center">
+                   <div className="w-10 h-10 rounded-xl bg-orange-500 text-white flex items-center justify-center">
+                     <CheckSquare size={20} />
+                   </div>
+                </div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Train Ticket Booking</h3>
+                  <div className="space-y-3 mb-8">
+                    {['Fast Tatkal Booking', 'Standard & AC Class', 'All India Routes'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-slate-600 dark:text-gray-400">
+                        <CheckSquare size={14} className="text-orange-500 shrink-0" /> {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <a href="https://wa.me/919951335542" className="w-full py-3 bg-orange-500 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-orange-600 transition-all mt-auto">
+                  <MessageCircle size={18} /> Book Ticket
+                </a>
+              </div>
+            </div>
+
+            {/* Study Abroad */}
+            <div className="bg-slate-50 dark:bg-[#0B090A] border border-slate-200 dark:border-white/10 hover:border-teal-500 transition-all group shadow-xl rounded-3xl overflow-hidden flex flex-col">
+              <div className="h-48 w-full relative overflow-hidden bg-slate-900">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800" alt="University" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent" />
+                <div className="absolute bottom-4 left-4 flex gap-2 items-center">
+                   <div className="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center">
+                     <BookOpen size={20} />
+                   </div>
+                </div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Study Abroad</h3>
+                  <div className="space-y-3 mb-8">
+                    {['Top Universities Admission', 'Student Visa Processing', 'Career Counseling'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-slate-600 dark:text-gray-400">
+                        <CheckCircle2 size={14} className="text-teal-600 shrink-0" /> {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <a href="https://wa.me/919951335542" className="w-full py-3 bg-teal-600 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-teal-700 transition-all mt-auto">
+                  <MessageCircle size={18} /> Get Consultation
+                </a>
               </div>
             </div>
 

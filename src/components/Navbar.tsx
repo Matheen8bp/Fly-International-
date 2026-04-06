@@ -26,6 +26,8 @@ const Navbar = () => {
         { name: 'Visa Stamping', path: '/visa#visa-stamping' },
         { name: 'Visit Visa', path: '/visa#visit-visa' },
         { name: 'Train Ticket Booking', path: '/visa#train-ticket-booking' },
+        { name: 'Certificate Attestation', path: '/visa#certificate-attestation' },
+        { name: 'Study Abroad', path: '/visa#study-abroad' },
       ]
     },
     { name: 'Resources', path: '/resources' },
