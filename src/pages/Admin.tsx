@@ -28,7 +28,7 @@ const Admin = () => {
         {/* Header */}
         <div className="flex justify-between items-end mb-8 border-b border-slate-200 dark:border-white/10 pb-6">
           <div>
-            <h1 className="text-3xl font-bold text-slate-900 dark:text-white font-serif">Admin Dashboard</h1>
+            <h1 className="text-3xl font-bold text-slate-900 dark:text-white font-sans">Admin Dashboard</h1>
             <p className="text-slate-500 mt-2">Manage your Packages and Bookings</p>
           </div>
           {activeTab === 'packages' && !isAdding && (

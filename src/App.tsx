@@ -18,6 +18,10 @@ import TrainTicketing from './pages/services/TrainTicketing';
 import CertificateAttestation from './pages/services/CertificateAttestation';
 import StudyAbroad from './pages/services/StudyAbroad';
 
+import HajjGuide from './pages/resources/HajjGuide';
+import UmrahRituals from './pages/resources/UmrahRituals';
+import PackingList from './pages/resources/PackingList';
+
 // Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -72,6 +76,9 @@ export default function App() {
               <Route path="/services/certificate-attestation" element={<CertificateAttestation />} />
               <Route path="/services/study-abroad" element={<StudyAbroad />} />
               <Route path="/resources" element={<Resources />} />
+              <Route path="/resources/haj-guide" element={<HajjGuide />} />
+              <Route path="/resources/umrah-rituals" element={<UmrahRituals />} />
+              <Route path="/resources/packing-list" element={<PackingList />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/admin" element={<Admin />} />

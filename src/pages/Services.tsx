@@ -144,7 +144,7 @@ const Services = () => {
       <section id="explorer" className="py-32 bg-slate-50 dark:bg-[#0B090A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white font-serif italic">Our Service Portfolio</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white font-sans italic">Our Service Portfolio</h2>
             <div className="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full" />
             <p className="text-slate-500 dark:text-gray-400 max-w-2xl mx-auto">
               Select a service below to view detailed requirements, pricing, and process timelines.

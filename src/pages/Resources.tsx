@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { RESOURCES } from '../constants';
-import { BookOpen, Info, CheckSquare, ArrowRight, PlayCircle, FileText } from 'lucide-react';
+import { BookOpen, Info, CheckSquare, ArrowRight, FileText, CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Resources = () => {
   const iconMap: Record<string, any> = { BookOpen, Info, CheckSquare };
@@ -22,91 +23,66 @@ const Resources = () => {
         </motion.div>
       </section>
 
-      {/* Main Resources */}
+      {/* Main Resources Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {RESOURCES.map((resource) => {
             const Icon = iconMap[resource.icon];
+            const resourceLinks: Record<string, string> = {
+              'haj-guide': '/resources/haj-guide',
+              'umrah-rituals': '/resources/umrah-rituals',
+              'packing-list': '/resources/packing-list'
+            };
+
             return (
-              <div key={resource.id} className="bg-white dark:bg-[#1F2937] p-10 rounded-[2.5rem] border border-slate-200 dark:border-[#1F2937] shadow-2xl shadow-black/50 hover:shadow-2xl shadow-black/50 transition-all group">
-                <div className="w-16 h-16 rounded-2xl bg-white dark:bg-[#1F2937]/50 text-[#D4AF37] flex items-center justify-center mb-8 group-hover:bg-slate-50 dark:bg-[#0B090A] group-hover:text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white transition-colors">
+              <div key={resource.id} className="bg-white dark:bg-[#1F2937] p-10 rounded-[2.5rem] border border-slate-200 dark:border-white/5 shadow-2xl shadow-black/5 hover:shadow-2xl transition-all group">
+                <div className="w-16 h-16 rounded-2xl bg-white dark:bg-[#1F2937]/50 text-[#D4AF37] flex items-center justify-center mb-8 group-hover:bg-slate-50 dark:bg-[#0B090A] group-hover:text-slate-900 dark:text-white transition-colors">
                   <Icon size={32} />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white mb-4">{resource.title}</h3>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 italic leading-tight">{resource.title}</h3>
                 <p className="text-slate-600 dark:text-gray-400 leading-relaxed mb-8">{resource.description}</p>
-                <button className="flex items-center gap-2 text-[#D4AF37] font-bold hover:gap-3 transition-all">
-                  Read Full Guide <ArrowRight size={20} />
-                </button>
+                <Link 
+                  to={resourceLinks[resource.id] || '/resources'}
+                  className="flex items-center gap-2 text-[#D4AF37] font-bold hover:gap-3 transition-all cursor-pointer"
+                >
+                  Explore Guide <ArrowRight size={20} />
+                </Link>
               </div>
             );
           })}
         </div>
       </section>
 
-      {/* Rituals Explained */}
-      <section className="bg-blue-950 py-24 relative overflow-hidden">
-        <div className="absolute inset-0 islamic-pattern opacity-5" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h2 className="text-4xl font-bold text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white">Umrah Rituals Explained</h2>
-              <div className="space-y-6">
-                {[
-                  { title: 'Ihram', desc: 'The sacred state of purity and the intention to perform Umrah.' },
-                  { title: 'Tawaf', desc: 'Circling the Kaaba seven times in a counter-clockwise direction.' },
-                  { title: 'Sa\'i', desc: 'Walking seven times between the hills of Safa and Marwa.' },
-                  { title: 'Halq/Taqsir', desc: 'Shaving or cutting the hair to mark the completion of Umrah.' },
-                ].map((ritual, idx) => (
-                  <div key={idx} className="flex gap-6 p-6 bg-white dark:bg-[#1F2937]/5 rounded-2xl border border-slate-800 dark:border-white/10 hover:bg-white dark:bg-[#1F2937]/10 transition-all">
-                    <div className="w-10 h-10 rounded-full bg-[#D4AF37] text-white dark:text-[#0B090A] flex items-center justify-center font-bold shrink-0">
-                      {idx + 1}
-                    </div>
-                    <div>
-                      <h4 className="text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white font-bold mb-1">{ritual.title}</h4>
-                      <p className="text-blue-100/60 text-sm leading-relaxed">{ritual.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
-              <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Video" />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                <div className="w-20 h-20 rounded-full bg-white dark:bg-[#1F2937]/20 backdrop-blur-md flex items-center justify-center border border-slate-800 dark:border-white/10 group-hover:scale-110 transition-transform">
-                  <PlayCircle className="text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white" size={48} />
-                </div>
-              </div>
-              <div className="absolute bottom-6 left-6 text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white font-bold">Watch: Umrah Rituals Guide</div>
-            </div>
-          </div>
+      {/* Detailed Advice Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#1F2937]/30 rounded-[3rem] py-20 border border-slate-100 dark:border-white/5">
+        <div className="max-w-4xl mx-auto text-center mb-16 px-4">
+           <h2 className="text-4xl font-bold text-slate-900 dark:text-white italic mb-6">Expert Advice for <span className="text-[#D4AF37]">Safe Travels</span></h2>
+           <p className="text-slate-500 dark:text-gray-400">Beyond the rituals, practical preparation and mindset are the keys to a successful spiritual journey.</p>
         </div>
-      </section>
 
-      {/* Do's and Don'ts */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="bg-white dark:bg-[#1F2937]/50 p-10 rounded-[2.5rem] border border-[#D4AF37] space-y-6">
-            <h3 className="text-2xl font-bold text-[#D4AF37] flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-slate-50 dark:bg-[#0B090A] text-slate-900 dark:text-slate-900 dark:text-white flex items-center justify-center text-sm">✓</div>
-              Do's for Pilgrims
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="bg-white dark:bg-[#0B090A] p-10 rounded-[2.5rem] border border-[#D4AF37] space-y-6 shadow-xl">
+            <h3 className="text-2xl font-bold text-[#D4AF37] flex items-center gap-3 italic leading-none">
+              <div className="w-8 h-8 rounded-full bg-slate-900 dark:bg-white text-white dark:text-[#0B090A] flex items-center justify-center text-sm not-italic">✓</div>
+              Pilgrim Do's
             </h3>
             <ul className="space-y-4">
               {['Maintain patience at all times', 'Keep hydrated and carry water', 'Respect local customs and laws', 'Focus on spiritual connection', 'Keep emergency contacts handy'].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-[#D4AF37] font-medium">
-                  <div className="w-1.5 h-1.5 bg-slate-50 dark:bg-[#0B090A] rounded-full" />
+                <li key={i} className="flex items-center gap-3 text-slate-800 dark:text-gray-200 font-medium">
+                  <CheckCircle2 size={16} className="text-[#D4AF37]" />
                   {item}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="bg-red-50 p-10 rounded-[2.5rem] border border-red-100 space-y-6">
-            <h3 className="text-2xl font-bold text-red-900 flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-red-600 text-slate-900 dark:text-slate-900 dark:text-slate-900 dark:text-white flex items-center justify-center text-sm">✕</div>
-              Don'ts for Pilgrims
+          <div className="bg-red-50 dark:bg-red-900/10 p-10 rounded-[2.5rem] border border-red-100 dark:border-red-900/30 space-y-6 shadow-xl">
+            <h3 className="text-2xl font-bold text-red-600 flex items-center gap-3 italic leading-none">
+              <div className="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center text-sm not-italic">✕</div>
+              Pilgrim Don'ts
             </h3>
             <ul className="space-y-4">
               {['Avoid crowded areas during peak times', 'Don\'t carry excessive cash', 'Don\'t engage in arguments', 'Don\'t take unauthorized photos', 'Avoid heavy meals before rituals'].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-red-800 font-medium">
+                <li key={i} className="flex items-center gap-3 text-red-900 dark:text-red-400 font-medium">
                   <div className="w-1.5 h-1.5 bg-red-600 rounded-full" />
                   {item}
                 </li>

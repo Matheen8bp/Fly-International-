@@ -99,7 +99,7 @@ const Navbar = () => {
               link.isDropdown ? (
                 <div key={link.name} className="relative group/dropdown py-2">
                   <button className={cn(
-                    "text-sm font-bold flex items-center gap-1 transition-colors hover:text-gold-500",
+                    "text-lg font-bold flex items-center gap-1 transition-colors hover:text-gold-500",
                     scrolled ? "text-slate-900 dark:text-white" : "text-white"
                   )}>
                     {link.name}
@@ -111,7 +111,7 @@ const Navbar = () => {
                         <Link
                           key={item.name}
                           to={item.path}
-                          className="block px-5 py-2.5 text-sm font-semibold text-slate-700 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-[#0B090A] hover:text-[#D4AF37] dark:hover:text-[#D4AF37] transition-colors"
+                          className="block px-5 py-2.5 text-base font-semibold text-slate-700 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-[#0B090A] hover:text-[#D4AF37] dark:hover:text-[#D4AF37] transition-colors"
                         >
                           {item.name}
                         </Link>
@@ -124,7 +124,7 @@ const Navbar = () => {
                   key={link.path}
                   to={link.path}
                   className={cn(
-                    "text-sm font-bold transition-colors hover:text-gold-500",
+                    "text-lg font-bold transition-colors hover:text-gold-500",
                     location.pathname === link.path
                       ? "text-gold-500"
                       : scrolled ? "text-slate-900 dark:text-white" : "text-white"
@@ -136,7 +136,7 @@ const Navbar = () => {
             ))}
             <a
               href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum Fly International! I have some questions regarding your travel services. Can you help?')}`}
-              className="bg-[#D4AF37] text-white dark:text-[#0B090A] px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-[#C5A030] dark:hover:bg-[#C5A030] transition-all shadow-xl"
+              className="bg-[#D4AF37] text-white dark:text-[#0B090A] px-6 py-2.5 rounded-full text-base font-bold flex items-center gap-2 hover:bg-[#C5A030] dark:hover:bg-[#C5A030] transition-all shadow-xl"
             >
               <MessageCircle size={18} />
               WhatsApp
@@ -171,7 +171,7 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 link.isDropdown ? (
                   <div key={link.name} className="py-2 space-y-2">
-                    <div className="px-3 py-2 text-base font-bold text-slate-500 uppercase tracking-wider text-xs">
+                    <div className="px-3 py-2 text-sm font-bold text-slate-500 uppercase tracking-wider">
                       {link.name}
                     </div>
                     <div className="space-y-1">
@@ -180,7 +180,7 @@ const Navbar = () => {
                           key={item.name}
                           to={item.path}
                           onClick={() => setIsOpen(false)}
-                          className="block px-6 py-3 text-sm font-bold text-slate-800 dark:text-white/90 hover:bg-slate-50 dark:hover:bg-[#0B090A] hover:text-[#D4AF37] rounded-lg transition-colors border-l-2 border-transparent hover:border-[#D4AF37]"
+                          className="block px-6 py-4 text-lg font-bold text-slate-800 dark:text-white/90 hover:bg-slate-50 dark:hover:bg-[#0B090A] hover:text-[#D4AF37] rounded-lg transition-colors border-l-2 border-transparent hover:border-[#D4AF37]"
                         >
                           {item.name}
                         </Link>
@@ -192,7 +192,7 @@ const Navbar = () => {
                     key={link.name}
                     to={link.path}
                     onClick={() => setIsOpen(false)}
-                    className="block px-3 py-4 text-base font-bold text-slate-900 dark:text-white/90 hover:bg-slate-50 dark:hover:bg-[#0B090A] hover:text-[#D4AF37] rounded-lg transition-colors"
+                    className="block px-3 py-5 text-xl font-bold text-slate-900 dark:text-white/90 hover:bg-slate-50 dark:hover:bg-[#0B090A] hover:text-[#D4AF37] rounded-lg transition-colors"
                   >
                     {link.name}
                   </Link>
