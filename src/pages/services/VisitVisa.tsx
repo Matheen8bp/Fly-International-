@@ -1,59 +1,68 @@
-import React, { useEffect } from 'react';
-import { CheckCircle2, CheckSquare, MessageCircle } from 'lucide-react';
+import React from 'react';
+import ServicePageLayout from '../../components/ServicePageLayout';
+import { Globe, Clock, CheckSquare, ShieldCheck, MapPin } from 'lucide-react';
 
 const VisitVisa = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <div className="pt-32 pb-20 space-y-24">
-      {/* Hero */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-50 dark:bg-[#0B090A] rounded-[3rem] p-12 md:p-20 relative overflow-hidden flex flex-col items-center text-center gap-8 border border-slate-200 dark:border-[#1F2937] shadow-xl">
-          <div className="absolute inset-0 bg-purple-50/20 dark:bg-[#1F2937]/10" />
-          <div className="relative z-10 space-y-8 max-w-3xl">
-            <span className="inline-block px-4 py-1.5 bg-purple-500/10 text-purple-600 dark:text-purple-400 rounded-full text-sm font-bold tracking-wider uppercase">
-              Hassle-Free Approvals
-            </span>
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
-              Tourist & Family <span className="text-purple-500">Visit Visas</span>
-            </h1>
-            <p className="text-slate-600 dark:text-gray-300 text-lg">
-              Planning a vacation or visiting family? We ensure quick and hassle-free processing for your visit visas.
-            </p>
-          </div>
+    <ServicePageLayout
+      title="Visit Visa"
+      subtitle="Global Tourism Solutions"
+      description="Planning a family visit or a vacation? We specialize in quick and hassle-free processing for tourist and family visit visas to the Middle East and beyond."
+      heroImage="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1200"
+      waMessage="Assalamu Alaikum! I am interested in Visit Visa services for my family via Fly International."
+    >
+      <div className="space-y-12">
+        <div className="prose dark:prose-invert max-w-none">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">Explore the World Hassle-Free</h2>
+          <p className="text-slate-600 dark:text-gray-400 text-lg leading-relaxed">
+            Obtaining a visit visa can be a complex process depending on the destination. Our dedicated team stays updated with the latest immigration policies to ensure your application is successful on the first attempt.
+          </p>
         </div>
-      </section>
 
-      {/* Content */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
-          <div className="lg:w-1/2 relative bg-slate-900 rounded-[2.5rem] overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800" alt="Visit Visa" className="w-full h-[500px] object-cover opacity-80" />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent flex flex-col justify-end p-12">
-              <CheckCircle2 size={40} className="text-purple-400 mb-4" />
-              <h3 className="text-4xl font-bold text-white mb-2">High Approval Rates</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3">
+              <MapPin className="text-purple-500" /> Popular Destinations
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { name: 'Dubai/UAE', type: '30/60 Days' },
+                { name: 'Qatar', type: 'Tourist/Work' },
+                { name: 'Oman', type: 'Short Stay' },
+                { name: 'Saudi Arabia', type: 'Family/Tourist' },
+                { name: 'Singapore', type: 'E-Visa' },
+                { name: 'Malaysia', type: 'Quick Process' }
+              ].map((dest, i) => (
+                <div key={i} className="bg-white dark:bg-[#1F2937] p-5 rounded-2xl border border-slate-100 dark:border-white/5 shadow-sm group hover:border-purple-500/50 transition-all">
+                  <div className="font-bold text-slate-800 dark:text-gray-200">{dest.name}</div>
+                  <div className="text-xs text-purple-500 font-bold uppercase tracking-widest">{dest.type}</div>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="lg:w-1/2 space-y-8">
-            <h2 className="text-4xl font-bold text-slate-900 dark:text-white">Our Services Include</h2>
-            <ul className="space-y-4">
-              {['Dubai, Qatar, Oman & Worldwide', '14-Day, 30-Day, and 90-Day Options', 'Family Visit Visa Processing', 'Tourist Visa Processing', 'Document Checklist Preparation', 'Quick Processing Times'].map((item, i) => (
-                <li key={i} className="flex items-center gap-4 text-slate-800 dark:text-gray-300 font-medium text-lg bg-white dark:bg-[#1F2937] p-5 rounded-2xl border border-slate-100 dark:border-white/10 shadow-sm">
-                   <CheckSquare size={24} className="text-purple-500 shrink-0" /> {item}
+
+          <div className="bg-purple-500/10 p-8 rounded-3xl border border-purple-500/20 shadow-inner">
+            <h3 className="text-xl font-bold text-purple-700 dark:text-purple-400 mb-6 flex items-center gap-2">
+              <ShieldCheck /> Why Choose Us?
+            </h3>
+            <ul className="space-y-5">
+              {[
+                'Online & Offline Application Support',
+                'Minimal Document Requirements',
+                'Fast E-Visa Delivery (within 24-48 hours)',
+                'Expert Guidance on Extension Policies',
+                'Family Package Discounts'
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3 text-slate-700 dark:text-gray-300 font-medium">
+                  <CheckSquare size={18} className="text-purple-600 mt-1 shrink-0" />
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
-            <div className="pt-8">
-              <a href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum! I am interested in Visit Visa services for my family.')}`} className="inline-flex items-center gap-2 px-8 py-4 bg-purple-600 text-white rounded-xl font-bold hover:bg-purple-700 transition-colors shadow-lg">
-                <MessageCircle size={20} /> Apply for Visit Visa
-              </a>
-            </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </ServicePageLayout>
   );
 };
 

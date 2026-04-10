@@ -1,62 +1,87 @@
-import React, { useEffect } from 'react';
-import { BookOpen, CheckCircle2, MessageCircle } from 'lucide-react';
+import React from 'react';
+import ServicePageLayout from '../../components/ServicePageLayout';
+import { BookOpen, GraduationCap, Globe, Users, CheckCircle2 } from 'lucide-react';
 
 const StudyAbroad = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <div className="pt-32 pb-20 space-y-24">
-      {/* Hero */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-50 dark:bg-[#0B090A] rounded-[3rem] p-12 md:p-20 relative overflow-hidden flex flex-col items-center text-center gap-8 border border-slate-200 dark:border-[#1F2937] shadow-xl">
-          <div className="absolute inset-0 bg-teal-50/20 dark:bg-[#1F2937]/10" />
-          <div className="relative z-10 space-y-8 max-w-3xl">
-            <span className="inline-block px-4 py-1.5 bg-teal-500/10 text-teal-600 dark:text-teal-400 rounded-full text-sm font-bold tracking-wider uppercase">
-              Secure Your Future
-            </span>
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
-              International <span className="text-teal-500">Study Abroad</span> Counseling
-            </h1>
-            <p className="text-slate-600 dark:text-gray-300 text-lg">
-              Secure your future with top international universities. We guide students through applications, visas, and counseling.
-            </p>
-          </div>
+    <ServicePageLayout
+      title="Study Abroad"
+      subtitle="Global Education Experts"
+      description="Start your international educational journey today. We provide expert counseling, university admissions, and complete student visa assistance for top global destinations."
+      heroImage="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=1200"
+      waMessage="Assalamu Alaikum! I am looking for Study Abroad counseling and admission assistance at Fly International."
+    >
+      <div className="space-y-12">
+        <div className="prose dark:prose-invert max-w-none">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">Expert Guidance for Your Future</h2>
+          <p className="text-slate-600 dark:text-gray-400 text-lg leading-relaxed">
+            Studying abroad is more than just an education—it's a life-changing experience. Our certified counselors help you choose the right course and university that aligns with your career goals and budget. We provide end-to-end support, from application to enrollment.
+          </p>
         </div>
-      </section>
 
-      {/* Content */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row-reverse gap-16 items-center">
-          <div className="lg:w-1/2 relative bg-slate-900 rounded-[2.5rem] overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800" alt="University" className="w-full h-[500px] object-cover opacity-80" />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent flex flex-col justify-end p-12">
-              <BookOpen size={40} className="text-teal-400 mb-4" />
-              <h3 className="text-4xl font-bold text-white mb-2">Top Universities</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3">
+              <Globe className="text-teal-500" /> Top Destinations
+            </h3>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { country: 'United Kingdom', uni: '150+ Universities' },
+                { country: 'USA', city: 'STEM Specialists' },
+                { country: 'Canada', city: 'PGWP Options' },
+                { country: 'Australia', city: 'Top G8 Unis' },
+                { country: 'Germany', city: 'Public/Private' },
+                { country: 'Malaysia', city: 'Affordable Hub' }
+              ].map((item, i) => (
+                <div key={i} className="bg-white dark:bg-[#1F2937] p-4 rounded-2xl border border-slate-100 dark:border-white/5 shadow-sm">
+                  <div className="font-bold text-slate-800 dark:text-gray-200">{item.country}</div>
+                  <div className="text-xs text-teal-600 font-bold uppercase tracking-widest">{item.uni || item.city}</div>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="lg:w-1/2 space-y-8">
-            <h2 className="text-4xl font-bold text-slate-900 dark:text-white">Our Educational Services</h2>
+
+          <div className="bg-teal-500/10 p-8 rounded-3xl border border-teal-500/20 shadow-xl">
+            <h3 className="text-xl font-bold text-teal-700 dark:text-teal-400 mb-6 flex items-center gap-2">
+              <GraduationCap /> Our Expert Support
+            </h3>
             <ul className="space-y-4">
-              {['Top Universities Admission', 'Student Visa Processing', 'Career & Course Counseling', 'Application Documentation', 'Scholarship Assistance', 'Pre-Departure Briefing'].map((item, i) => (
-                <li key={i} className="flex items-center gap-4 text-slate-800 dark:text-gray-300 font-bold text-lg p-3">
-                   <div className="w-10 h-10 bg-teal-500/10 text-teal-500 flex items-center justify-center rounded-xl shrink-0">
-                     <CheckCircle2 size={24} />
-                   </div>
-                   {item}
+              {[
+                'University Selection & Admissions',
+                'SOP & LOR Preparation Guidance',
+                'Student Visa (Tier 4) Processing',
+                'Scholarship & Financial Aid Support',
+                'Pre-departure Briefings',
+                'Accommodation Assistance'
+              ].map((benefit, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <CheckCircle2 size={18} className="text-teal-600 mt-1 shrink-0" />
+                  <span className="text-slate-700 dark:text-gray-300 font-medium">{benefit}</span>
                 </li>
               ))}
             </ul>
-            <div className="pt-8">
-              <a href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum! I am looking for Study Abroad counseling and admission assistance.')}`} className="inline-flex items-center gap-2 px-8 py-4 bg-teal-600 text-white rounded-xl font-bold hover:bg-teal-700 transition-colors shadow-lg">
-                <MessageCircle size={20} /> Free Consultation Call
-              </a>
-            </div>
           </div>
         </div>
-      </section>
-    </div>
+
+        <div className="bg-white dark:bg-[#1F2937] p-10 rounded-[2.5rem] border border-slate-100 dark:border-white/5 shadow-xl flex flex-col md:flex-row items-center gap-10">
+          <div className="w-24 h-24 bg-teal-100 dark:bg-teal-900/30 rounded-3xl flex items-center justify-center text-teal-600 shrink-0">
+            <Users size={48} />
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Join Our 500+ Success Stories</h3>
+            <p className="text-slate-600 dark:text-gray-400">
+              We have helped hundreds of students secure admissions in top-tier universities worldwide. Our success rate for student visas is among the highest in the region.
+            </p>
+            <a 
+              href="https://wa.me/919951335542?text=Assalamu Alaikum! I need Study Abroad counseling."
+              className="inline-flex items-center gap-2 text-teal-600 font-bold hover:gap-3 transition-all"
+            >
+              Book a Free Counseling Session <ArrowRight size={20} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </ServicePageLayout>
   );
 };
 

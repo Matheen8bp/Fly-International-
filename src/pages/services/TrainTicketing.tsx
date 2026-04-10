@@ -1,59 +1,69 @@
-import React, { useEffect } from 'react';
-import { Train, CheckCircle2, MessageCircle } from 'lucide-react';
+import React from 'react';
+import ServicePageLayout from '../../components/ServicePageLayout';
+import { Train, Clock, Map, CreditCard, ShieldCheck } from 'lucide-react';
 
 const TrainTicketing = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <div className="pt-32 pb-20 space-y-24">
-      {/* Hero */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-50 dark:bg-[#0B090A] rounded-[3rem] p-12 md:p-20 relative overflow-hidden flex flex-col items-center text-center gap-8 border border-slate-200 dark:border-[#1F2937] shadow-xl">
-          <div className="absolute inset-0 bg-orange-50/20 dark:bg-[#1F2937]/10" />
-          <div className="relative z-10 space-y-8 max-w-3xl">
-            <span className="inline-block px-4 py-1.5 bg-orange-500/10 text-orange-600 dark:text-orange-400 rounded-full text-sm font-bold tracking-wider uppercase">
-              All India Routes
-            </span>
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
-              Fast & Reliable <span className="text-orange-500">Train Ticketing</span>
-            </h1>
-            <p className="text-slate-600 dark:text-gray-300 text-lg">
-              Travel comfortably across India. We offer reliable and fast train ticket reservations, including last-minute tatkal bookings.
-            </p>
-          </div>
+    <ServicePageLayout
+      title="Train Ticket Service"
+      subtitle="Fast Indian Railways Booking"
+      description="Enjoy a comfortable journey across India. We offer reliable and fast train ticket reservations, specializing in last-minute Tatkal bookings and regional connections."
+      heroImage="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80&w=1200"
+      waMessage="Assalamu Alaikum! I want to book Train Tickets through Fly International."
+    >
+      <div className="space-y-12">
+        <div className="prose dark:prose-invert max-w-none">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">Seamless Rail Travel</h2>
+          <p className="text-slate-600 dark:text-gray-400 text-lg leading-relaxed">
+            Navigating the Indian Railways booking system can be challenging. Our professional booking service ensures you get the seats you want without the technical stress. From luxury express trains like Rajdhani to standard regional services, we've got you covered.
+          </p>
         </div>
-      </section>
 
-      {/* Content */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row-reverse gap-16 items-center">
-          <div className="lg:w-1/2 relative bg-slate-900 rounded-[2.5rem] overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80&w=800" alt="Train" className="w-full h-[500px] object-cover opacity-80" />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent flex flex-col justify-end p-12">
-              <Train size={40} className="text-orange-400 mb-4" />
-              <h3 className="text-4xl font-bold text-white mb-2">Tatkal Booking</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-orange-500/10 p-8 rounded-3xl border border-orange-500/20 shadow-xl">
+            <h3 className="text-xl font-bold text-orange-700 dark:text-orange-400 mb-6 flex items-center gap-2">
+              <Clock /> Priority Booking
+            </h3>
+            <div className="space-y-4">
+              {[
+                { title: 'Tatkal Booking', desc: 'Expert handling for high-demand tickets.' },
+                { title: 'Premium Classes', desc: 'Secure 1AC, 2AC, and Executive seats.' },
+                { title: 'Regional Connections', desc: 'Booking for all major and minor routes.' },
+                { title: 'Quick Cancellation', desc: 'Hassle-free refunds as per IRCTC norms.' }
+              ].map((item, idx) => (
+                <div key={idx} className="bg-white dark:bg-[#1F2937] p-4 rounded-xl shadow-sm border border-slate-50 dark:border-white/5">
+                  <div className="font-bold text-slate-900 dark:text-white">{item.title}</div>
+                  <div className="text-sm text-slate-500 dark:text-gray-400">{item.desc}</div>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="lg:w-1/2 space-y-8">
-            <h2 className="text-4xl font-bold text-slate-900 dark:text-white">Booking Services</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-               {['Fast Tatkal Booking', 'Standard Reservations', 'AC Class AC1, AC2, AC3', 'Sleeper Class', 'PNR Status Tracking', 'All India Routes'].map((item, i) => (
-                 <div key={i} className="bg-white dark:bg-[#1F2937] border border-slate-100 dark:border-white/10 p-6 rounded-2xl flex items-center gap-4 text-slate-800 dark:text-gray-300 font-bold shadow-sm">
-                   <CheckCircle2 size={24} className="text-orange-500 shrink-0" /> {item}
-                 </div>
-               ))}
+
+          <div className="space-y-8">
+            <div className="bg-white dark:bg-[#1F2937] p-8 rounded-3xl border border-slate-100 dark:border-white/5 shadow-lg">
+              <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                <Map className="text-orange-500" /> Popular Routes
+              </h4>
+              <div className="flex flex-wrap gap-2 text-sm text-slate-600 dark:text-gray-400">
+                {['Hyderabad - Mumbai', 'Hyderabad - Delhi', 'Chennai - Bangalore', 'Kolkata - Delhi', 'Mumbai - Goa'].map((route, i) => (
+                  <span key={i} className="px-4 py-2 bg-slate-50 dark:bg-[#0B090A] border rounded-full font-medium">
+                    {route}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className="pt-8">
-              <a href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum! I want to book Train Tickets through Fly International.')}`} className="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 text-white rounded-xl font-bold hover:bg-orange-600 transition-colors shadow-lg">
-                <MessageCircle size={20} /> Book Now
-              </a>
+
+            <div className="flex items-center gap-4 p-6 bg-green-500/10 rounded-2xl border border-green-500/20">
+              <ShieldCheck className="text-green-600" size={32} />
+              <div>
+                <div className="font-bold text-slate-900 dark:text-white">Authorized Booking</div>
+                <div className="text-sm text-slate-600 dark:text-gray-400">Secure IRCTC gateway processing.</div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </ServicePageLayout>
   );
 };
 

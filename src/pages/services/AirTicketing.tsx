@@ -1,69 +1,67 @@
-import React, { useEffect } from 'react';
-import { Plane, CheckSquare, MessageCircle, Phone } from 'lucide-react';
+import React from 'react';
+import ServicePageLayout from '../../components/ServicePageLayout';
+import { Plane, CheckSquare, Clock, ShieldCheck, Zap } from 'lucide-react';
 
 const AirTicketing = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <div className="pt-32 pb-20 space-y-24">
-      {/* Hero */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-50 dark:bg-[#0B090A] rounded-[3rem] p-12 md:p-20 relative overflow-hidden flex flex-col items-center text-center gap-8 border border-slate-200 dark:border-[#1F2937] shadow-xl">
-          <div className="absolute inset-0 bg-blue-50/20 dark:bg-[#1F2937]/10" />
-          <div className="relative z-10 space-y-8 max-w-3xl">
-            <span className="inline-block px-4 py-1.5 bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-full text-sm font-bold tracking-wider uppercase">
-              Global Flights
-            </span>
-            <h1 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white leading-tight">
-              International & Domestic <span className="text-blue-500">Air Ticketing</span>
-            </h1>
-            <p className="text-slate-600 dark:text-gray-300 text-lg">
-              We provide highly competitive and discounted airfares for all major airlines from Hyderabad to the Middle East and worldwide.
-            </p>
-          </div>
+    <ServicePageLayout
+      title="Air Ticketing"
+      subtitle="Fast & Affordable Flights"
+      description="Book your next journey with confidence. We provide highly competitive and discounted airfares for all major airlines from Hyderabad to the Middle East and worldwide."
+      heroImage="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=1200"
+      waMessage="Assalamu Alaikum! I would like to inquire about Air Ticketing services at Fly International."
+    >
+      <div className="space-y-12">
+        <div className="prose dark:prose-invert max-w-none">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">Global Flight Solutions</h2>
+          <p className="text-slate-600 dark:text-gray-400 text-lg leading-relaxed">
+            At Fly International, we specialize in finding the best deals for your international and domestic travel. Whether you're traveling for work, leisure, or pilgrimage, our direct connections with major airlines allow us to secure fares that aren't available on standard booking sites.
+          </p>
         </div>
-      </section>
 
-      {/* Content */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
-          <div className="lg:w-1/2 relative bg-slate-900 rounded-[2.5rem] overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=800" alt="Flight processing" className="w-full h-[500px] object-cover opacity-80" />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent flex flex-col justify-end p-12">
-              <Plane size={40} className="text-blue-400 transform rotate-45 mb-4" />
-              <h3 className="text-4xl font-bold text-white mb-2">Cheapest Fares</h3>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white dark:bg-[#1F2937] p-8 rounded-3xl border border-slate-100 dark:border-white/5 shadow-lg">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+              <Plane className="text-blue-500" /> Popular Destinations
+            </h3>
+            <ul className="space-y-4">
+              {[
+                { name: 'Saudi Arabia', city: 'Jeddah, Riyadh, Dammam' },
+                { name: 'UAE', city: 'Dubai, Abu Dhabi, Sharjah' },
+                { name: 'Kuwait & Oman', city: 'Direct & Connecting' },
+                { name: 'Qatar & Bahrain', city: 'Daily Flights' },
+                { name: 'UK, USA & Australia', city: 'Long-haul Specialists' },
+                { name: 'Domestic India', city: 'All Major Hubs' }
+              ].map((item, idx) => (
+                <li key={idx} className="flex justify-between items-center border-b border-slate-50 dark:border-white/5 pb-2">
+                  <span className="font-bold text-slate-800 dark:text-gray-200">{item.name}</span>
+                  <span className="text-xs text-slate-500 dark:text-gray-400 uppercase tracking-widest">{item.city}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="lg:w-1/2 space-y-8">
-            <h2 className="text-4xl font-bold text-slate-900 dark:text-white">Popular Destinations</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="space-y-2 p-6 bg-white dark:bg-[#1F2937] rounded-2xl shadow-sm border border-slate-100 dark:border-white/10">
-                <div className="flex items-center gap-3 font-bold text-slate-800 dark:text-white text-lg"><CheckSquare size={20} className="text-green-600" /> Saudi Arabia</div>
-                <p className="text-sm text-slate-500 dark:text-gray-400">Jeddah, Riyadh, Dammam</p>
-              </div>
-              <div className="space-y-2 p-6 bg-white dark:bg-[#1F2937] rounded-2xl shadow-sm border border-slate-100 dark:border-white/10">
-                <div className="flex items-center gap-3 font-bold text-slate-800 dark:text-white text-lg"><CheckSquare size={20} className="text-green-600" /> UAE</div>
-                <p className="text-sm text-slate-500 dark:text-gray-400">Dubai, Abu Dhabi, Sharjah</p>
-              </div>
-              <div className="p-6 bg-white dark:bg-[#1F2937] rounded-2xl shadow-sm border border-slate-100 dark:border-white/10 font-bold text-slate-800 dark:text-white flex items-center gap-3"><CheckSquare size={20} className="text-green-600" /> Kuwait & Oman</div>
-              <div className="p-6 bg-white dark:bg-[#1F2937] rounded-2xl shadow-sm border border-slate-100 dark:border-white/10 font-bold text-slate-800 dark:text-white flex items-center gap-3"><CheckSquare size={20} className="text-green-600" /> Qatar & Bahrain</div>
-              <div className="p-6 bg-white dark:bg-[#1F2937] rounded-2xl shadow-sm border border-slate-100 dark:border-white/10 font-bold text-slate-800 dark:text-white flex items-center gap-3"><CheckSquare size={20} className="text-green-600" /> Australia & UK</div>
-              <div className="p-6 bg-white dark:bg-[#1F2937] rounded-2xl shadow-sm border border-slate-100 dark:border-white/10 font-bold text-slate-800 dark:text-white flex items-center gap-3"><CheckSquare size={20} className="text-green-600" /> Domestic Flights</div>
+
+          <div className="space-y-6">
+            <div className="bg-blue-500/10 p-6 rounded-3xl border border-blue-500/20">
+              <h3 className="font-bold text-blue-600 dark:text-blue-400 mb-2 flex items-center gap-2">
+                <Zap size={20} /> Last Minute Deals
+              </h3>
+              <p className="text-sm text-slate-600 dark:text-gray-400">
+                Need to travel urgently? We specialize in finding last-minute Tatkal style air tickets when everything else seems full.
+              </p>
             </div>
-            <div className="pt-8 flex gap-4">
-              <a href={`https://wa.me/919951335542?text=${encodeURIComponent('Assalamu Alaikum! I would like to inquire about Air Ticketing services at Fly International.')}`} className="flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-colors shadow-lg">
-                <MessageCircle size={20} /> Chat with Agent
-              </a>
-              <a href="tel:+919951335542" className="flex items-center gap-2 px-8 py-4 bg-slate-900 text-white dark:bg-white dark:text-slate-900 rounded-xl font-bold transition-colors shadow-lg">
-                <Phone size={20} /> Call Now
-              </a>
+            <div className="bg-green-500/10 p-6 rounded-3xl border border-green-500/20">
+              <h3 className="font-bold text-green-600 dark:text-green-400 mb-2 flex items-center gap-2">
+                <ShieldCheck size={20} /> Group Bookings
+              </h3>
+              <p className="text-sm text-slate-600 dark:text-gray-400">
+                Planning a family trip or a group pilgrimage? Contact us for specialized group discounts and coordinated travel.
+              </p>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </ServicePageLayout>
   );
 };
 
